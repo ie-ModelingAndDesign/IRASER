@@ -54,6 +54,7 @@ func numberColor(value: Int) -> UIColor {
     }
 }
 ```
+↑こんな感じ
 ##変数, 定数定義
 関連性のある定義の場合は１行で記述してもよい。  
 ```

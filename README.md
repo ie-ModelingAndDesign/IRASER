@@ -42,6 +42,18 @@ Swift2.1
 |                Class               |                 クラス                 |
 |               Struct               |              ストラクチャ              |
 #Swiftコーディング規約
+##インデント
+インデントはタブで行い、サイズは 4 とする。
+```
+func numberColor(value: Int) -> UIColor {
+    switch value {
+	    case 2, 4:
+	    	return UIColor(red: 119.0/255.0, green: 110.0/255.0, blue: 101.0/255.0, alpha: 1.0)
+	    default:
+	    	return UIColor.whiteColor()
+    }
+}
+```
 ##変数, 定数定義
 関連性のある定義の場合は１行で記述してもよい。  
 ```

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FEE1F1601BEB2DCD0096F7E4"
+               BlueprintIdentifier = "FEE1F19E1BEB2F350096F7E4"
                BuildableName = "panaki.app"
                BlueprintName = "panaki"
                ReferencedContainer = "container:panaki.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FEE1F1781BEB2DCD0096F7E4"
+               BlueprintIdentifier = "FEE1F1B21BEB2F360096F7E4"
                BuildableName = "panakiTests.xctest"
                BlueprintName = "panakiTests"
                ReferencedContainer = "container:panaki.xcodeproj">
@@ -42,7 +42,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FEE1F1831BEB2DCD0096F7E4"
+               BlueprintIdentifier = "FEE1F1BD1BEB2F360096F7E4"
                BuildableName = "panakiUITests.xctest"
                BlueprintName = "panakiUITests"
                ReferencedContainer = "container:panaki.xcodeproj">
@@ -52,7 +52,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FEE1F1601BEB2DCD0096F7E4"
+            BlueprintIdentifier = "FEE1F19E1BEB2F350096F7E4"
             BuildableName = "panaki.app"
             BlueprintName = "panaki"
             ReferencedContainer = "container:panaki.xcodeproj">
@@ -75,7 +75,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FEE1F1601BEB2DCD0096F7E4"
+            BlueprintIdentifier = "FEE1F19E1BEB2F350096F7E4"
             BuildableName = "panaki.app"
             BlueprintName = "panaki"
             ReferencedContainer = "container:panaki.xcodeproj">
@@ -94,7 +94,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FEE1F1601BEB2DCD0096F7E4"
+            BlueprintIdentifier = "FEE1F19E1BEB2F350096F7E4"
             BuildableName = "panaki.app"
             BlueprintName = "panaki"
             ReferencedContainer = "container:panaki.xcodeproj">

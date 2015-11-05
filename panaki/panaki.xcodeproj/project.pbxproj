@@ -7,68 +7,64 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FEE1F1651BEB2DCD0096F7E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE1F1641BEB2DCD0096F7E4 /* AppDelegate.swift */; };
-		FEE1F1671BEB2DCD0096F7E4 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE1F1661BEB2DCD0096F7E4 /* RootViewController.swift */; };
-		FEE1F1691BEB2DCD0096F7E4 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE1F1681BEB2DCD0096F7E4 /* DataViewController.swift */; };
-		FEE1F16B1BEB2DCD0096F7E4 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE1F16A1BEB2DCD0096F7E4 /* ModelController.swift */; };
-		FEE1F16E1BEB2DCD0096F7E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEE1F16C1BEB2DCD0096F7E4 /* Main.storyboard */; };
-		FEE1F1701BEB2DCD0096F7E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEE1F16F1BEB2DCD0096F7E4 /* Assets.xcassets */; };
-		FEE1F1731BEB2DCD0096F7E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEE1F1711BEB2DCD0096F7E4 /* LaunchScreen.storyboard */; };
-		FEE1F17E1BEB2DCD0096F7E4 /* panakiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE1F17D1BEB2DCD0096F7E4 /* panakiTests.swift */; };
-		FEE1F1891BEB2DCD0096F7E4 /* panakiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE1F1881BEB2DCD0096F7E4 /* panakiUITests.swift */; };
+		FEE1F1A31BEB2F350096F7E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE1F1A21BEB2F350096F7E4 /* AppDelegate.swift */; };
+		FEE1F1A51BEB2F350096F7E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE1F1A41BEB2F350096F7E4 /* ViewController.swift */; };
+		FEE1F1A81BEB2F350096F7E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEE1F1A61BEB2F350096F7E4 /* Main.storyboard */; };
+		FEE1F1AA1BEB2F350096F7E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEE1F1A91BEB2F350096F7E4 /* Assets.xcassets */; };
+		FEE1F1AD1BEB2F350096F7E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEE1F1AB1BEB2F350096F7E4 /* LaunchScreen.storyboard */; };
+		FEE1F1B81BEB2F360096F7E4 /* panakiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE1F1B71BEB2F360096F7E4 /* panakiTests.swift */; };
+		FEE1F1C31BEB2F360096F7E4 /* panakiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE1F1C21BEB2F360096F7E4 /* panakiUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		FEE1F17A1BEB2DCD0096F7E4 /* PBXContainerItemProxy */ = {
+		FEE1F1B41BEB2F360096F7E4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = FEE1F1591BEB2DCD0096F7E4 /* Project object */;
+			containerPortal = FEE1F1971BEB2F350096F7E4 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = FEE1F1601BEB2DCD0096F7E4;
+			remoteGlobalIDString = FEE1F19E1BEB2F350096F7E4;
 			remoteInfo = panaki;
 		};
-		FEE1F1851BEB2DCD0096F7E4 /* PBXContainerItemProxy */ = {
+		FEE1F1BF1BEB2F360096F7E4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = FEE1F1591BEB2DCD0096F7E4 /* Project object */;
+			containerPortal = FEE1F1971BEB2F350096F7E4 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = FEE1F1601BEB2DCD0096F7E4;
+			remoteGlobalIDString = FEE1F19E1BEB2F350096F7E4;
 			remoteInfo = panaki;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FEE1F1611BEB2DCD0096F7E4 /* panaki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = panaki.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FEE1F1641BEB2DCD0096F7E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FEE1F1661BEB2DCD0096F7E4 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		FEE1F1681BEB2DCD0096F7E4 /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
-		FEE1F16A1BEB2DCD0096F7E4 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
-		FEE1F16D1BEB2DCD0096F7E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FEE1F16F1BEB2DCD0096F7E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FEE1F1721BEB2DCD0096F7E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		FEE1F1741BEB2DCD0096F7E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FEE1F1791BEB2DCD0096F7E4 /* panakiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = panakiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FEE1F17D1BEB2DCD0096F7E4 /* panakiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = panakiTests.swift; sourceTree = "<group>"; };
-		FEE1F17F1BEB2DCD0096F7E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FEE1F1841BEB2DCD0096F7E4 /* panakiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = panakiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FEE1F1881BEB2DCD0096F7E4 /* panakiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = panakiUITests.swift; sourceTree = "<group>"; };
-		FEE1F18A1BEB2DCD0096F7E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEE1F19F1BEB2F350096F7E4 /* panaki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = panaki.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEE1F1A21BEB2F350096F7E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FEE1F1A41BEB2F350096F7E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FEE1F1A71BEB2F350096F7E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FEE1F1A91BEB2F350096F7E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FEE1F1AC1BEB2F350096F7E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FEE1F1AE1BEB2F350096F7E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEE1F1B31BEB2F360096F7E4 /* panakiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = panakiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEE1F1B71BEB2F360096F7E4 /* panakiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = panakiTests.swift; sourceTree = "<group>"; };
+		FEE1F1B91BEB2F360096F7E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEE1F1BE1BEB2F360096F7E4 /* panakiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = panakiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEE1F1C21BEB2F360096F7E4 /* panakiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = panakiUITests.swift; sourceTree = "<group>"; };
+		FEE1F1C41BEB2F360096F7E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		FEE1F15E1BEB2DCD0096F7E4 /* Frameworks */ = {
+		FEE1F19C1BEB2F350096F7E4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FEE1F1761BEB2DCD0096F7E4 /* Frameworks */ = {
+		FEE1F1B01BEB2F360096F7E4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FEE1F1811BEB2DCD0096F7E4 /* Frameworks */ = {
+		FEE1F1BB1BEB2F360096F7E4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -78,55 +74,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FEE1F1581BEB2DCD0096F7E4 = {
+		FEE1F1961BEB2F350096F7E4 = {
 			isa = PBXGroup;
 			children = (
-				FEE1F1631BEB2DCD0096F7E4 /* panaki */,
-				FEE1F17C1BEB2DCD0096F7E4 /* panakiTests */,
-				FEE1F1871BEB2DCD0096F7E4 /* panakiUITests */,
-				FEE1F1621BEB2DCD0096F7E4 /* Products */,
+				FEE1F1A11BEB2F350096F7E4 /* panaki */,
+				FEE1F1B61BEB2F360096F7E4 /* panakiTests */,
+				FEE1F1C11BEB2F360096F7E4 /* panakiUITests */,
+				FEE1F1A01BEB2F350096F7E4 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		FEE1F1621BEB2DCD0096F7E4 /* Products */ = {
+		FEE1F1A01BEB2F350096F7E4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FEE1F1611BEB2DCD0096F7E4 /* panaki.app */,
-				FEE1F1791BEB2DCD0096F7E4 /* panakiTests.xctest */,
-				FEE1F1841BEB2DCD0096F7E4 /* panakiUITests.xctest */,
+				FEE1F19F1BEB2F350096F7E4 /* panaki.app */,
+				FEE1F1B31BEB2F360096F7E4 /* panakiTests.xctest */,
+				FEE1F1BE1BEB2F360096F7E4 /* panakiUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FEE1F1631BEB2DCD0096F7E4 /* panaki */ = {
+		FEE1F1A11BEB2F350096F7E4 /* panaki */ = {
 			isa = PBXGroup;
 			children = (
-				FEE1F1641BEB2DCD0096F7E4 /* AppDelegate.swift */,
-				FEE1F1661BEB2DCD0096F7E4 /* RootViewController.swift */,
-				FEE1F1681BEB2DCD0096F7E4 /* DataViewController.swift */,
-				FEE1F16A1BEB2DCD0096F7E4 /* ModelController.swift */,
-				FEE1F16C1BEB2DCD0096F7E4 /* Main.storyboard */,
-				FEE1F16F1BEB2DCD0096F7E4 /* Assets.xcassets */,
-				FEE1F1711BEB2DCD0096F7E4 /* LaunchScreen.storyboard */,
-				FEE1F1741BEB2DCD0096F7E4 /* Info.plist */,
+				FEE1F1A21BEB2F350096F7E4 /* AppDelegate.swift */,
+				FEE1F1A41BEB2F350096F7E4 /* ViewController.swift */,
+				FEE1F1A61BEB2F350096F7E4 /* Main.storyboard */,
+				FEE1F1A91BEB2F350096F7E4 /* Assets.xcassets */,
+				FEE1F1AB1BEB2F350096F7E4 /* LaunchScreen.storyboard */,
+				FEE1F1AE1BEB2F350096F7E4 /* Info.plist */,
 			);
 			path = panaki;
 			sourceTree = "<group>";
 		};
-		FEE1F17C1BEB2DCD0096F7E4 /* panakiTests */ = {
+		FEE1F1B61BEB2F360096F7E4 /* panakiTests */ = {
 			isa = PBXGroup;
 			children = (
-				FEE1F17D1BEB2DCD0096F7E4 /* panakiTests.swift */,
-				FEE1F17F1BEB2DCD0096F7E4 /* Info.plist */,
+				FEE1F1B71BEB2F360096F7E4 /* panakiTests.swift */,
+				FEE1F1B91BEB2F360096F7E4 /* Info.plist */,
 			);
 			path = panakiTests;
 			sourceTree = "<group>";
 		};
-		FEE1F1871BEB2DCD0096F7E4 /* panakiUITests */ = {
+		FEE1F1C11BEB2F360096F7E4 /* panakiUITests */ = {
 			isa = PBXGroup;
 			children = (
-				FEE1F1881BEB2DCD0096F7E4 /* panakiUITests.swift */,
-				FEE1F18A1BEB2DCD0096F7E4 /* Info.plist */,
+				FEE1F1C21BEB2F360096F7E4 /* panakiUITests.swift */,
+				FEE1F1C41BEB2F360096F7E4 /* Info.plist */,
 			);
 			path = panakiUITests;
 			sourceTree = "<group>";
@@ -134,13 +128,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FEE1F1601BEB2DCD0096F7E4 /* panaki */ = {
+		FEE1F19E1BEB2F350096F7E4 /* panaki */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FEE1F18D1BEB2DCD0096F7E4 /* Build configuration list for PBXNativeTarget "panaki" */;
+			buildConfigurationList = FEE1F1C71BEB2F360096F7E4 /* Build configuration list for PBXNativeTarget "panaki" */;
 			buildPhases = (
-				FEE1F15D1BEB2DCD0096F7E4 /* Sources */,
-				FEE1F15E1BEB2DCD0096F7E4 /* Frameworks */,
-				FEE1F15F1BEB2DCD0096F7E4 /* Resources */,
+				FEE1F19B1BEB2F350096F7E4 /* Sources */,
+				FEE1F19C1BEB2F350096F7E4 /* Frameworks */,
+				FEE1F19D1BEB2F350096F7E4 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -148,72 +142,72 @@
 			);
 			name = panaki;
 			productName = panaki;
-			productReference = FEE1F1611BEB2DCD0096F7E4 /* panaki.app */;
+			productReference = FEE1F19F1BEB2F350096F7E4 /* panaki.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FEE1F1781BEB2DCD0096F7E4 /* panakiTests */ = {
+		FEE1F1B21BEB2F360096F7E4 /* panakiTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FEE1F1901BEB2DCD0096F7E4 /* Build configuration list for PBXNativeTarget "panakiTests" */;
+			buildConfigurationList = FEE1F1CA1BEB2F360096F7E4 /* Build configuration list for PBXNativeTarget "panakiTests" */;
 			buildPhases = (
-				FEE1F1751BEB2DCD0096F7E4 /* Sources */,
-				FEE1F1761BEB2DCD0096F7E4 /* Frameworks */,
-				FEE1F1771BEB2DCD0096F7E4 /* Resources */,
+				FEE1F1AF1BEB2F360096F7E4 /* Sources */,
+				FEE1F1B01BEB2F360096F7E4 /* Frameworks */,
+				FEE1F1B11BEB2F360096F7E4 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				FEE1F17B1BEB2DCD0096F7E4 /* PBXTargetDependency */,
+				FEE1F1B51BEB2F360096F7E4 /* PBXTargetDependency */,
 			);
 			name = panakiTests;
 			productName = panakiTests;
-			productReference = FEE1F1791BEB2DCD0096F7E4 /* panakiTests.xctest */;
+			productReference = FEE1F1B31BEB2F360096F7E4 /* panakiTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		FEE1F1831BEB2DCD0096F7E4 /* panakiUITests */ = {
+		FEE1F1BD1BEB2F360096F7E4 /* panakiUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FEE1F1931BEB2DCD0096F7E4 /* Build configuration list for PBXNativeTarget "panakiUITests" */;
+			buildConfigurationList = FEE1F1CD1BEB2F360096F7E4 /* Build configuration list for PBXNativeTarget "panakiUITests" */;
 			buildPhases = (
-				FEE1F1801BEB2DCD0096F7E4 /* Sources */,
-				FEE1F1811BEB2DCD0096F7E4 /* Frameworks */,
-				FEE1F1821BEB2DCD0096F7E4 /* Resources */,
+				FEE1F1BA1BEB2F360096F7E4 /* Sources */,
+				FEE1F1BB1BEB2F360096F7E4 /* Frameworks */,
+				FEE1F1BC1BEB2F360096F7E4 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				FEE1F1861BEB2DCD0096F7E4 /* PBXTargetDependency */,
+				FEE1F1C01BEB2F360096F7E4 /* PBXTargetDependency */,
 			);
 			name = panakiUITests;
 			productName = panakiUITests;
-			productReference = FEE1F1841BEB2DCD0096F7E4 /* panakiUITests.xctest */;
+			productReference = FEE1F1BE1BEB2F360096F7E4 /* panakiUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		FEE1F1591BEB2DCD0096F7E4 /* Project object */ = {
+		FEE1F1971BEB2F350096F7E4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = Kazuma;
 				TargetAttributes = {
-					FEE1F1601BEB2DCD0096F7E4 = {
+					FEE1F19E1BEB2F350096F7E4 = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = 4RW234Q67J;
 					};
-					FEE1F1781BEB2DCD0096F7E4 = {
+					FEE1F1B21BEB2F360096F7E4 = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = 4RW234Q67J;
-						TestTargetID = FEE1F1601BEB2DCD0096F7E4;
+						TestTargetID = FEE1F19E1BEB2F350096F7E4;
 					};
-					FEE1F1831BEB2DCD0096F7E4 = {
+					FEE1F1BD1BEB2F360096F7E4 = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = 4RW234Q67J;
-						TestTargetID = FEE1F1601BEB2DCD0096F7E4;
+						TestTargetID = FEE1F19E1BEB2F350096F7E4;
 					};
 				};
 			};
-			buildConfigurationList = FEE1F15C1BEB2DCD0096F7E4 /* Build configuration list for PBXProject "panaki" */;
+			buildConfigurationList = FEE1F19A1BEB2F350096F7E4 /* Build configuration list for PBXProject "panaki" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -221,37 +215,37 @@
 				en,
 				Base,
 			);
-			mainGroup = FEE1F1581BEB2DCD0096F7E4;
-			productRefGroup = FEE1F1621BEB2DCD0096F7E4 /* Products */;
+			mainGroup = FEE1F1961BEB2F350096F7E4;
+			productRefGroup = FEE1F1A01BEB2F350096F7E4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FEE1F1601BEB2DCD0096F7E4 /* panaki */,
-				FEE1F1781BEB2DCD0096F7E4 /* panakiTests */,
-				FEE1F1831BEB2DCD0096F7E4 /* panakiUITests */,
+				FEE1F19E1BEB2F350096F7E4 /* panaki */,
+				FEE1F1B21BEB2F360096F7E4 /* panakiTests */,
+				FEE1F1BD1BEB2F360096F7E4 /* panakiUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		FEE1F15F1BEB2DCD0096F7E4 /* Resources */ = {
+		FEE1F19D1BEB2F350096F7E4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEE1F1731BEB2DCD0096F7E4 /* LaunchScreen.storyboard in Resources */,
-				FEE1F1701BEB2DCD0096F7E4 /* Assets.xcassets in Resources */,
-				FEE1F16E1BEB2DCD0096F7E4 /* Main.storyboard in Resources */,
+				FEE1F1AD1BEB2F350096F7E4 /* LaunchScreen.storyboard in Resources */,
+				FEE1F1AA1BEB2F350096F7E4 /* Assets.xcassets in Resources */,
+				FEE1F1A81BEB2F350096F7E4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FEE1F1771BEB2DCD0096F7E4 /* Resources */ = {
+		FEE1F1B11BEB2F360096F7E4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FEE1F1821BEB2DCD0096F7E4 /* Resources */ = {
+		FEE1F1BC1BEB2F360096F7E4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -261,61 +255,59 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		FEE1F15D1BEB2DCD0096F7E4 /* Sources */ = {
+		FEE1F19B1BEB2F350096F7E4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEE1F1671BEB2DCD0096F7E4 /* RootViewController.swift in Sources */,
-				FEE1F16B1BEB2DCD0096F7E4 /* ModelController.swift in Sources */,
-				FEE1F1691BEB2DCD0096F7E4 /* DataViewController.swift in Sources */,
-				FEE1F1651BEB2DCD0096F7E4 /* AppDelegate.swift in Sources */,
+				FEE1F1A51BEB2F350096F7E4 /* ViewController.swift in Sources */,
+				FEE1F1A31BEB2F350096F7E4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FEE1F1751BEB2DCD0096F7E4 /* Sources */ = {
+		FEE1F1AF1BEB2F360096F7E4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEE1F17E1BEB2DCD0096F7E4 /* panakiTests.swift in Sources */,
+				FEE1F1B81BEB2F360096F7E4 /* panakiTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FEE1F1801BEB2DCD0096F7E4 /* Sources */ = {
+		FEE1F1BA1BEB2F360096F7E4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEE1F1891BEB2DCD0096F7E4 /* panakiUITests.swift in Sources */,
+				FEE1F1C31BEB2F360096F7E4 /* panakiUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		FEE1F17B1BEB2DCD0096F7E4 /* PBXTargetDependency */ = {
+		FEE1F1B51BEB2F360096F7E4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FEE1F1601BEB2DCD0096F7E4 /* panaki */;
-			targetProxy = FEE1F17A1BEB2DCD0096F7E4 /* PBXContainerItemProxy */;
+			target = FEE1F19E1BEB2F350096F7E4 /* panaki */;
+			targetProxy = FEE1F1B41BEB2F360096F7E4 /* PBXContainerItemProxy */;
 		};
-		FEE1F1861BEB2DCD0096F7E4 /* PBXTargetDependency */ = {
+		FEE1F1C01BEB2F360096F7E4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FEE1F1601BEB2DCD0096F7E4 /* panaki */;
-			targetProxy = FEE1F1851BEB2DCD0096F7E4 /* PBXContainerItemProxy */;
+			target = FEE1F19E1BEB2F350096F7E4 /* panaki */;
+			targetProxy = FEE1F1BF1BEB2F360096F7E4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FEE1F16C1BEB2DCD0096F7E4 /* Main.storyboard */ = {
+		FEE1F1A61BEB2F350096F7E4 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FEE1F16D1BEB2DCD0096F7E4 /* Base */,
+				FEE1F1A71BEB2F350096F7E4 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		FEE1F1711BEB2DCD0096F7E4 /* LaunchScreen.storyboard */ = {
+		FEE1F1AB1BEB2F350096F7E4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FEE1F1721BEB2DCD0096F7E4 /* Base */,
+				FEE1F1AC1BEB2F350096F7E4 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -323,7 +315,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		FEE1F18B1BEB2DCD0096F7E4 /* Debug */ = {
+		FEE1F1C51BEB2F360096F7E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -368,7 +360,7 @@
 			};
 			name = Debug;
 		};
-		FEE1F18C1BEB2DCD0096F7E4 /* Release */ = {
+		FEE1F1C61BEB2F360096F7E4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -406,11 +398,10 @@
 			};
 			name = Release;
 		};
-		FEE1F18E1BEB2DCD0096F7E4 /* Debug */ = {
+		FEE1F1C81BEB2F360096F7E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = panaki/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kazumalab.panaki;
@@ -418,11 +409,10 @@
 			};
 			name = Debug;
 		};
-		FEE1F18F1BEB2DCD0096F7E4 /* Release */ = {
+		FEE1F1C91BEB2F360096F7E4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = panaki/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kazumalab.panaki;
@@ -430,7 +420,7 @@
 			};
 			name = Release;
 		};
-		FEE1F1911BEB2DCD0096F7E4 /* Debug */ = {
+		FEE1F1CB1BEB2F360096F7E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -442,7 +432,7 @@
 			};
 			name = Debug;
 		};
-		FEE1F1921BEB2DCD0096F7E4 /* Release */ = {
+		FEE1F1CC1BEB2F360096F7E4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -454,7 +444,7 @@
 			};
 			name = Release;
 		};
-		FEE1F1941BEB2DCD0096F7E4 /* Debug */ = {
+		FEE1F1CE1BEB2F360096F7E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = panakiUITests/Info.plist;
@@ -466,7 +456,7 @@
 			};
 			name = Debug;
 		};
-		FEE1F1951BEB2DCD0096F7E4 /* Release */ = {
+		FEE1F1CF1BEB2F360096F7E4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = panakiUITests/Info.plist;
@@ -481,40 +471,40 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FEE1F15C1BEB2DCD0096F7E4 /* Build configuration list for PBXProject "panaki" */ = {
+		FEE1F19A1BEB2F350096F7E4 /* Build configuration list for PBXProject "panaki" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FEE1F18B1BEB2DCD0096F7E4 /* Debug */,
-				FEE1F18C1BEB2DCD0096F7E4 /* Release */,
+				FEE1F1C51BEB2F360096F7E4 /* Debug */,
+				FEE1F1C61BEB2F360096F7E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FEE1F18D1BEB2DCD0096F7E4 /* Build configuration list for PBXNativeTarget "panaki" */ = {
+		FEE1F1C71BEB2F360096F7E4 /* Build configuration list for PBXNativeTarget "panaki" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FEE1F18E1BEB2DCD0096F7E4 /* Debug */,
-				FEE1F18F1BEB2DCD0096F7E4 /* Release */,
+				FEE1F1C81BEB2F360096F7E4 /* Debug */,
+				FEE1F1C91BEB2F360096F7E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		FEE1F1901BEB2DCD0096F7E4 /* Build configuration list for PBXNativeTarget "panakiTests" */ = {
+		FEE1F1CA1BEB2F360096F7E4 /* Build configuration list for PBXNativeTarget "panakiTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FEE1F1911BEB2DCD0096F7E4 /* Debug */,
-				FEE1F1921BEB2DCD0096F7E4 /* Release */,
+				FEE1F1CB1BEB2F360096F7E4 /* Debug */,
+				FEE1F1CC1BEB2F360096F7E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		FEE1F1931BEB2DCD0096F7E4 /* Build configuration list for PBXNativeTarget "panakiUITests" */ = {
+		FEE1F1CD1BEB2F360096F7E4 /* Build configuration list for PBXNativeTarget "panakiUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FEE1F1941BEB2DCD0096F7E4 /* Debug */,
-				FEE1F1951BEB2DCD0096F7E4 /* Release */,
+				FEE1F1CE1BEB2F360096F7E4 /* Debug */,
+				FEE1F1CF1BEB2F360096F7E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = FEE1F1591BEB2DCD0096F7E4 /* Project object */;
+	rootObject = FEE1F1971BEB2F350096F7E4 /* Project object */;
 }

@@ -165,4 +165,7 @@ NSLog("%@ is %@", hoge, fuga)
 
 #最後に
 あとは自由！
-頑張ろう！！
+頑張ろう！！  
+
+###パナキ
+![](http://img2.gifmagazine.net/gifmagazine/images/476815/original.gif)

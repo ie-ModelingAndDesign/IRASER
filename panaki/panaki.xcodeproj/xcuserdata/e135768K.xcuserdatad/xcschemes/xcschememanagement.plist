@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>panama.xcscheme</key>
+		<key>panaki.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>FE07517D1BE3E35F000D812E</key>
+		<key>FEE1F1601BEB2DCD0096F7E4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FE0751941BE3E35F000D812E</key>
+		<key>FEE1F1781BEB2DCD0096F7E4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FEE1F1831BEB2DCD0096F7E4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -1,15 +1,15 @@
 //
-//  panamaTests.swift
-//  panamaTests
+//  panakiTests.swift
+//  panakiTests
 //
-//  Created by Kazuma on 2015/10/31.
-//  Copyright (c) 2015年 Kazuma. All rights reserved.
+//  Created by Kazuma on 2015/11/05.
+//  Copyright © 2015年 Kazuma. All rights reserved.
 //
 
-import UIKit
 import XCTest
+@testable import panaki
 
-class panamaTests: XCTestCase {
+class panakiTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -23,12 +23,12 @@ class panamaTests: XCTestCase {
     
     func testExample() {
         // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock() {
+        self.measureBlock {
             // Put the code you want to measure the time of here.
         }
     }

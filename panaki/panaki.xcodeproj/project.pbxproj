@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		704AEB301BEB307000721ACD /* Andrea_higa_word_search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704AEB2F1BEB307000721ACD /* Andrea_higa_word_search.swift */; };
+		704AEB321BEB308A00721ACD /* Andrea_higa_siritori.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704AEB311BEB308A00721ACD /* Andrea_higa_siritori.swift */; };
+		704AEB341BEB30A100721ACD /* Andrea_higa_score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704AEB331BEB30A100721ACD /* Andrea_higa_score.swift */; };
 		FEE1F1A31BEB2F350096F7E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE1F1A21BEB2F350096F7E4 /* AppDelegate.swift */; };
 		FEE1F1A51BEB2F350096F7E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE1F1A41BEB2F350096F7E4 /* ViewController.swift */; };
 		FEE1F1A81BEB2F350096F7E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEE1F1A61BEB2F350096F7E4 /* Main.storyboard */; };
@@ -34,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		704AEB2F1BEB307000721ACD /* Andrea_higa_word_search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Andrea_higa_word_search.swift; sourceTree = "<group>"; };
+		704AEB311BEB308A00721ACD /* Andrea_higa_siritori.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Andrea_higa_siritori.swift; sourceTree = "<group>"; };
+		704AEB331BEB30A100721ACD /* Andrea_higa_score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Andrea_higa_score.swift; sourceTree = "<group>"; };
 		FEE1F19F1BEB2F350096F7E4 /* panaki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = panaki.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEE1F1A21BEB2F350096F7E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEE1F1A41BEB2F350096F7E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +105,9 @@
 			children = (
 				FEE1F1A21BEB2F350096F7E4 /* AppDelegate.swift */,
 				FEE1F1A41BEB2F350096F7E4 /* ViewController.swift */,
+				704AEB2F1BEB307000721ACD /* Andrea_higa_word_search.swift */,
+				704AEB311BEB308A00721ACD /* Andrea_higa_siritori.swift */,
+				704AEB331BEB30A100721ACD /* Andrea_higa_score.swift */,
 				FEE1F1A61BEB2F350096F7E4 /* Main.storyboard */,
 				FEE1F1A91BEB2F350096F7E4 /* Assets.xcassets */,
 				FEE1F1AB1BEB2F350096F7E4 /* LaunchScreen.storyboard */,
@@ -259,7 +268,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				704AEB321BEB308A00721ACD /* Andrea_higa_siritori.swift in Sources */,
 				FEE1F1A51BEB2F350096F7E4 /* ViewController.swift in Sources */,
+				704AEB341BEB30A100721ACD /* Andrea_higa_score.swift in Sources */,
+				704AEB301BEB307000721ACD /* Andrea_higa_word_search.swift in Sources */,
 				FEE1F1A31BEB2F350096F7E4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,6 +499,7 @@
 				FEE1F1C91BEB2F360096F7E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FEE1F1CA1BEB2F360096F7E4 /* Build configuration list for PBXNativeTarget "panakiTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +508,7 @@
 				FEE1F1CC1BEB2F360096F7E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FEE1F1CD1BEB2F360096F7E4 /* Build configuration list for PBXNativeTarget "panakiUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +517,7 @@
 				FEE1F1CF1BEB2F360096F7E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftyJSON
 
 extension Character {
     func isMatch(pattern: String) -> Bool {

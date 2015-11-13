@@ -239,7 +239,7 @@ class Andrea_higa_word {
             default:
                 filename = 71
                 break
-        } // "ぱ", "ん" は 0 を返し, 何かしらのエラーは 71 を返す。(絵文字や英字など, その他の記号の処理)
+        } // "ぱ", "ん" は 0 を返し, 何かしらのエラーは 71 を返す。(絵文字や英字など "ゔ" も, その他の記号の処理)
         
         return String(filename)
     }

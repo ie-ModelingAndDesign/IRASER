@@ -25,7 +25,7 @@ class panakiTests: XCTestCase {
     func siritoritest() {
         let andrea = Andrea_higa()
         let andrea_word = Andrea_higa_word()
-        var return_word = ""
+        var return_word = "おはよう"
 
         for var i = 0; i < 30; i++ {
             let lastchar = andrea_word.adjustChar(return_word)

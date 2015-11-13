@@ -31,11 +31,11 @@ class Andrea_higa {
         let cnt = json.count
         
         var return_word = ""
-        
+        // 語彙がなくなったときの処理を考える
         repeat {
             let index = Int(arc4random_uniform(UInt32(cnt)))
             return_word = Array(json.keys)[index]
-            if return_word.characters.last! == "ん" {
+            if return_word.characters.last! == "ん" || return_word.characters.last! == "ゔ" {
                 Andrea_higa.dict[return_word] = 1
             }
         } while Andrea_higa.dict[return_word] == 1

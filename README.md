@@ -1,4 +1,12 @@
+<<<<<<< Updated upstream
 # Hello World!!
+=======
+<<<<<<< HEAD
+# ようこそ!!
+=======
+# Hello World!!
+>>>>>>> master
+>>>>>>> Stashed changes
 ```
  _______________________________
 < 我が名はIRASER!! 全てを消しさ(ry >

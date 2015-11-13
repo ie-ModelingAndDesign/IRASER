@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  panaki
 //
-//  Created by Kazuma on 2015/11/05.
+//  Created by Kazuma from IRASER on 2015/11/05.
 //  Copyright © 2015年 Kazuma. All rights reserved.
 //
 // iphone size ... 6
@@ -10,6 +10,8 @@
 import UIKit
 
 class ViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate{
+    
+    let lets = Andrea_higa()  // Main method
     
     let mytextbox: UITextField = UITextField(frame: CGRectMake(0,0,300,60))
     let button01 : UIButton = UIButton(frame: CGRectMake(0,0,60,60))
@@ -33,8 +35,9 @@ class ViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate{
         mytextbox.layer.position = CGPoint(x:self.view.bounds.width/2-30,y:self.view.bounds.height-35);
         self.view.addSubview(mytextbox)
         
+        let words = "いす"
+        print(lets.siritori(words))
         
-    
     }
 
     override func didReceiveMemoryWarning() {

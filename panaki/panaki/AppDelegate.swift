@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  panaki
 //
-//  Created by Kazuma on 2015/11/05.
+//  Created by Kazuma from IRASER on 2015/11/05.
 //  Copyright © 2015年 Kazuma. All rights reserved.
 //
 

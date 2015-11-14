@@ -119,17 +119,17 @@ var hoge: AnyObject? = nil
 ```
 var hoge: String?
 let hash: [String: String?] = ["hoge": hoge, "fuga": "not nil"]
-println(hash)
+print(hash)
 // -> [hoge: nil, fuga: Optional("not nil")]
 ```
 ##セミコロン
 式の終端にセミコロンは記述しない。
 ```
 // ◯
-println("hoge")
+print("hoge")
 
 // ☓
-println("hoge");
+print("hoge");
 ```
 ##ファイル終末
 ファイル終末は改行で終わるようにする。

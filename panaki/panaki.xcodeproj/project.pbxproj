@@ -79,6 +79,7 @@
 		70002FEA1BF5AC9D0006101E /* 9.json in Resources */ = {isa = PBXBuildFile; fileRef = 70002FA11BF5AC9D0006101E /* 9.json */; };
 		70002FEB1BF5AC9D0006101E /* dicgen.pl in Resources */ = {isa = PBXBuildFile; fileRef = 70002FA21BF5AC9D0006101E /* dicgen.pl */; };
 		70002FEC1BF5AC9D0006101E /* dictionary.txt in Resources */ = {isa = PBXBuildFile; fileRef = 70002FA31BF5AC9D0006101E /* dictionary.txt */; };
+		70002FED1BF5AC9D0006101E /* wordmap.txt in Resources */ = {isa = PBXBuildFile; fileRef = 70002FA41BF5AC9D0006101E /* wordmap.txt */; };
 		7016A25F1BF5AE8D001BC388 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7016A25E1BF5AE8D001BC388 /* SwiftyJSON.framework */; };
 		7016A2611BF5EC08001BC388 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7016A2601BF5EC08001BC388 /* SwiftyJSON.framework */; };
 		7016A2621BF5F3F4001BC388 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE1F1A21BEB2F350096F7E4 /* AppDelegate.swift */; };
@@ -92,6 +93,7 @@
 		A10A371741D6F7F4BA9988FF /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90E32F840A7DAF4CA91003A9 /* Pods.framework */; };
 		FEE1F1A31BEB2F350096F7E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE1F1A21BEB2F350096F7E4 /* AppDelegate.swift */; };
 		FEE1F1A51BEB2F350096F7E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE1F1A41BEB2F350096F7E4 /* ViewController.swift */; };
+		FEE1F1A81BEB2F350096F7E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEE1F1A61BEB2F350096F7E4 /* Main.storyboard */; };
 		FEE1F1AA1BEB2F350096F7E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEE1F1A91BEB2F350096F7E4 /* Assets.xcassets */; };
 		FEE1F1AD1BEB2F350096F7E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEE1F1AB1BEB2F350096F7E4 /* LaunchScreen.storyboard */; };
 		FEE1F1B81BEB2F360096F7E4 /* panakiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE1F1B71BEB2F360096F7E4 /* panakiTests.swift */; };
@@ -188,6 +190,7 @@
 		70002FA11BF5AC9D0006101E /* 9.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 9.json; sourceTree = "<group>"; };
 		70002FA21BF5AC9D0006101E /* dicgen.pl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.perl; path = dicgen.pl; sourceTree = "<group>"; };
 		70002FA31BF5AC9D0006101E /* dictionary.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dictionary.txt; sourceTree = "<group>"; };
+		70002FA41BF5AC9D0006101E /* wordmap.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wordmap.txt; sourceTree = "<group>"; };
 		7016A25E1BF5AE8D001BC388 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		7016A2601BF5EC08001BC388 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		704AEB2F1BEB307000721ACD /* Andrea_higa_word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Andrea_higa_word.swift; sourceTree = "<group>"; };
@@ -324,6 +327,7 @@
 				70002FA11BF5AC9D0006101E /* 9.json */,
 				70002FA21BF5AC9D0006101E /* dicgen.pl */,
 				70002FA31BF5AC9D0006101E /* dictionary.txt */,
+				70002FA41BF5AC9D0006101E /* wordmap.txt */,
 			);
 			path = dictionary;
 			sourceTree = SOURCE_ROOT;
@@ -531,6 +535,7 @@
 				70002FBC1BF5AC9D0006101E /* 30.json in Resources */,
 				70002FC21BF5AC9D0006101E /* 36.json in Resources */,
 				70002FDA1BF5AC9D0006101E /* 58.json in Resources */,
+				70002FED1BF5AC9D0006101E /* wordmap.txt in Resources */,
 				70002FDE1BF5AC9D0006101E /* 61.json in Resources */,
 				70002FE11BF5AC9D0006101E /* 64.json in Resources */,
 				70002FB91BF5AC9D0006101E /* 28.json in Resources */,
@@ -568,6 +573,7 @@
 				70002FD71BF5AC9D0006101E /* 55.json in Resources */,
 				70002FCF1BF5AC9D0006101E /* 48.json in Resources */,
 				70002FBA1BF5AC9D0006101E /* 29.json in Resources */,
+				FEE1F1A81BEB2F350096F7E4 /* Main.storyboard in Resources */,
 				70002FE91BF5AC9D0006101E /* 8.json in Resources */,
 				70002FE21BF5AC9D0006101E /* 65.json in Resources */,
 				70002FAE1BF5AC9D0006101E /* 18.json in Resources */,

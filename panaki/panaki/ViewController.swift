@@ -10,7 +10,7 @@
 import UIKit
 
 class ViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate{
-    
+
     let lets = Andrea_higa()  // Main method
     
     let mytextbox: UITextField = UITextField(frame: CGRectMake(0,0,300,60))
@@ -18,6 +18,7 @@ class ViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.whiteColor()
         // Do any additional setup after loading the view, typically from a nib.
         
         //button生成

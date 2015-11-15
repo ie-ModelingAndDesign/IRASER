@@ -12,7 +12,7 @@ import UIKit
 class ViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate{
 
     let lets = Andrea_higa()  // Main method
-    
+    //変数の定義
     let mytextbox = UITextField(frame: CGRectMake(0,0,300,60))
     let send_button = UIButton(frame: CGRectMake(0,0,60,60))
     let hoem_button = UIButton(frame: CGRectMake(0,0,50,50))

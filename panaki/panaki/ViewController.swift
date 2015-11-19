@@ -13,60 +13,61 @@ class ViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate{
 
     let lets = Andrea_higa()  // Main method
     
-    let mytextbox: UITextField = UITextField(frame: CGRectMake(0,0,300,60))
-    let button01 : UIButton = UIButton(frame: CGRectMake(0,0,60,60))
-    
+    let mytextbox: UITextField = UITextField()
+    let button01 : UIButton = UIButton()
+    let contentView = UIView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        self.view.backgroundColor = UIColor.redColor()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
-            
-        self.view.backgroundColor = UIColor.whiteColor()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        setContentView()
         //button生成
-        button01.backgroundColor = UIColor.whiteColor()
-        button01.setTitle("✈", forState: UIControlState.Normal)
-        button01.layer.cornerRadius = 10.0
-        button01.layer.masksToBounds = true
-        button01.layer.position = CGPoint(x: self.view.frame.width/2+150, y:self.view.frame.height-35)
-        self.view.addSubview(button01)
+        setbutton01()
         //ここまで
         
         //textfield生成
-        mytextbox.text = "text"
-        mytextbox.borderStyle = UITextBorderStyle.RoundedRect
-        mytextbox.layer.position = CGPoint(x:self.view.bounds.width/2-30,y:self.view.bounds.height-35);
-        self.view.addSubview(mytextbox)
+        setmytextbox()
         
         let words = "いす"
         print(lets.siritori(words))
         
     }
     
-    func keyboardWillShow(notification:NSNotification) {
-        adjustingHeight(true, notification: notification)
+    override func viewWillAppear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
     }
     
-    func keyboardWillHide(notification:NSNotification) {
-        adjustingHeight(false, notification: notification)
+    override func viewWillDisappear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
     }
     
-    func adjustingHeight(show:Bool, notification:NSNotification) {
-        // 1
-        var userInfo = notification.userInfo!
-        // 2
-        let keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).CGRectValue()
-        // 3
-        let animationDurarion = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSTimeInterval
-        // 4
-        let changeInHeight = (CGRectGetHeight(keyboardFrame) + 40) * (show ? -1 : 1)
-        //5
-        UIView.animateWithDuration(animationDurarion, animations: { () -> Void in
-            var frame = self.mytextbox.frame
-            frame.origin.y += changeInHeight
-            self.mytextbox.frame = frame
+    func keyboardWillShow(notification: NSNotification) {
+        let keyboardheight = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+        adjustingHeight(self.view.frame.size.height - keyboardheight.size.height, notification: notification)
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        let keyboardheight = (notification.userInfo![UIKeyboardFrameBeginUserInfoKey] as! NSValue).CGRectValue()
+        adjustingHeight(self.contentView.frame.size.height + keyboardheight.size.height, notification: notification)
+    }
+    
+    func adjustingHeight(height: CGFloat, notification: NSNotification) {
+        let duration = notification.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! NSTimeInterval
+        let keyboard = (notification.userInfo![UIKeyboardFrameBeginUserInfoKey] as! NSValue).CGRectValue()
+        
+        UIView.animateWithDuration(duration, animations: { () -> Void in
+            if keyboard.size.height > 0.0 {
+                var frame = self.contentView.frame
+                frame.size.height = height
+                self.contentView.frame = frame
+                self.setmytextbox()
+                self.setbutton01()
+            }
         })
         
     }
@@ -75,16 +76,39 @@ class ViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate{
         self.view.endEditing(true)
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    func setContentView() {
+        self.contentView.backgroundColor = UIColor.blueColor()
+        let contentViewFrame = self.view.frame
+        self.contentView.frame = contentViewFrame
+        self.view.addSubview(self.contentView)
+    }
+    
+    func setmytextbox () {
+        mytextbox.frame = CGRectMake(0, self.contentView.frame.height - 60, self.contentView.frame.size.width - 75, 60)
+        mytextbox.text = "text"
+        mytextbox.borderStyle = UITextBorderStyle.RoundedRect
+        self.contentView.addSubview(mytextbox)
+    }
+    
+    func setbutton01() {
+        button01.frame = CGRectMake(self.mytextbox.frame.size.width + 10, self.contentView.frame.height - 60, 60, 60)
+        button01.backgroundColor = UIColor.whiteColor()
+        button01.setTitle("✈", forState: UIControlState.Normal)
+        button01.layer.cornerRadius = 10.0
+        button01.layer.masksToBounds = true
+        self.contentView.addSubview(button01)
+    }
+    
+    override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
+        // view の 階層順
+        setContentView()
+        setmytextbox()
+        setbutton01()
+    }
 }
 

@@ -5,7 +5,7 @@
 //  Created by Kazuma from IRASER on 2015/11/05.
 //  Copyright © 2015年 Kazuma. All rights reserved.
 //
-// iphone size ... 6
+// iphone size ...
 
 import UIKit
 

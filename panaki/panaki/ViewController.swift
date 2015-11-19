@@ -9,29 +9,34 @@
 
 import UIKit
 
-class ViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate{
+class ViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource{
 
     let lets = Andrea_higa()  // Main method
     
     let mytextbox: UITextField = UITextField()
     let button01 : UIButton = UIButton()
     let contentView = UIView()
+    var tableView: UITableView  =   UITableView()
+    var items: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.redColor()
-        
+        tableView.delegate      =   self
+        tableView.dataSource    =   self
+        mytextbox.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
         setContentView()
         //button生成
         setbutton01()
+        button01.addTarget(self , action: "push:", forControlEvents: .TouchUpInside)
         //ここまで
-        
+        sethistorylist()
         //textfield生成
         setmytextbox()
         
+        
         let words = "いす"
-        print(lets.siritori(words))
+        items.append(words)
         
     }
     
@@ -46,6 +51,14 @@ class ViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate{
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
     }
     
+    func push(sender: UIButton){
+        mytextbox.resignFirstResponder()
+        items.append(self.mytextbox.text!)
+        items.append(lets.siritori(self.mytextbox.text!))
+        self.mytextbox.text = ""
+        self.tableView.reloadData()
+    }
+
     func keyboardWillShow(notification: NSNotification) {
         let keyboardheight = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
         adjustingHeight(self.view.frame.size.height - keyboardheight.size.height, notification: notification)
@@ -81,6 +94,11 @@ class ViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate{
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.tableView.reloadData()
+    }
+    
     func setContentView() {
         self.contentView.backgroundColor = UIColor.blueColor()
         let contentViewFrame = self.view.frame
@@ -90,7 +108,7 @@ class ViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate{
     
     func setmytextbox () {
         mytextbox.frame = CGRectMake(0, self.contentView.frame.height - 60, self.contentView.frame.size.width - 75, 60)
-        mytextbox.text = "text"
+        mytextbox.placeholder = "ここに文字を入力すると良いよ"
         mytextbox.borderStyle = UITextBorderStyle.RoundedRect
         self.contentView.addSubview(mytextbox)
     }
@@ -102,6 +120,33 @@ class ViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate{
         button01.layer.cornerRadius = 10.0
         button01.layer.masksToBounds = true
         self.contentView.addSubview(button01)
+        
+    }
+    
+    func sethistorylist() {
+        tableView.frame         =   CGRectMake(0, 50, 320, 200);
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        self.view.addSubview(tableView)
+        self.tableView.estimatedRowHeight = 100.0
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.items.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
+        cell.textLabel!.text = self.items[indexPath.row]
+        return cell
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool{
+        mytextbox.text = textField.text
+        // キーボードを閉じる
+        print("aaaa")
+        textField.resignFirstResponder()
+        return true
     }
     
     override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {

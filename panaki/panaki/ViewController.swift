@@ -58,6 +58,7 @@ class ViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate,
         self.mytextbox.text = ""
         self.tableView.reloadData()
     }
+    
 
     func keyboardWillShow(notification: NSNotification) {
         let keyboardheight = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()

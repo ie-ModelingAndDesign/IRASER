@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  panaki
 //
-//  Created by Kazuma on 2015/11/05.
+//  Created by Kazuma from IRASER on 2015/11/05.
 //  Copyright © 2015年 Kazuma. All rights reserved.
 //
 
@@ -13,8 +13,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        let viewController = ViewController()
+        self.window!.rootViewController = viewController
+        self.window!.makeKeyAndVisible()
         // Override point for customization after application launch.
         return true
     }

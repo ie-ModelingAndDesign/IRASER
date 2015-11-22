@@ -93,9 +93,7 @@
 		A10A371741D6F7F4BA9988FF /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90E32F840A7DAF4CA91003A9 /* Pods.framework */; };
 		FEE1F1A31BEB2F350096F7E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE1F1A21BEB2F350096F7E4 /* AppDelegate.swift */; };
 		FEE1F1A51BEB2F350096F7E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE1F1A41BEB2F350096F7E4 /* ViewController.swift */; };
-		FEE1F1A81BEB2F350096F7E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEE1F1A61BEB2F350096F7E4 /* Main.storyboard */; };
 		FEE1F1AA1BEB2F350096F7E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEE1F1A91BEB2F350096F7E4 /* Assets.xcassets */; };
-		FEE1F1AD1BEB2F350096F7E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEE1F1AB1BEB2F350096F7E4 /* LaunchScreen.storyboard */; };
 		FEE1F1B81BEB2F360096F7E4 /* panakiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE1F1B71BEB2F360096F7E4 /* panakiTests.swift */; };
 		FEE1F1C31BEB2F360096F7E4 /* panakiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE1F1C21BEB2F360096F7E4 /* panakiUITests.swift */; };
 /* End PBXBuildFile section */
@@ -202,9 +200,7 @@
 		FEE1F19F1BEB2F350096F7E4 /* panaki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = panaki.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEE1F1A21BEB2F350096F7E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEE1F1A41BEB2F350096F7E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FEE1F1A71BEB2F350096F7E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FEE1F1A91BEB2F350096F7E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FEE1F1AC1BEB2F350096F7E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FEE1F1AE1BEB2F350096F7E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEE1F1B31BEB2F360096F7E4 /* panakiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = panakiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEE1F1B71BEB2F360096F7E4 /* panakiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = panakiTests.swift; sourceTree = "<group>"; };
@@ -371,9 +367,7 @@
 				704AEB2F1BEB307000721ACD /* Andrea_higa_word.swift */,
 				704AEB311BEB308A00721ACD /* Andrea_higa.swift */,
 				704AEB331BEB30A100721ACD /* Andrea_higa_score.swift */,
-				FEE1F1A61BEB2F350096F7E4 /* Main.storyboard */,
 				FEE1F1A91BEB2F350096F7E4 /* Assets.xcassets */,
-				FEE1F1AB1BEB2F350096F7E4 /* LaunchScreen.storyboard */,
 				FEE1F1AE1BEB2F350096F7E4 /* Info.plist */,
 				70002F5B1BF5AC9D0006101E /* dictionary */,
 			);
@@ -513,7 +507,6 @@
 				70002FAA1BF5AC9D0006101E /* 14.json in Resources */,
 				70002FC31BF5AC9D0006101E /* 37.json in Resources */,
 				70002FB11BF5AC9D0006101E /* 20.json in Resources */,
-				FEE1F1AD1BEB2F350096F7E4 /* LaunchScreen.storyboard in Resources */,
 				70002FBF1BF5AC9D0006101E /* 33.json in Resources */,
 				FEE1F1AA1BEB2F350096F7E4 /* Assets.xcassets in Resources */,
 				70002FB41BF5AC9D0006101E /* 23.json in Resources */,
@@ -573,7 +566,6 @@
 				70002FD71BF5AC9D0006101E /* 55.json in Resources */,
 				70002FCF1BF5AC9D0006101E /* 48.json in Resources */,
 				70002FBA1BF5AC9D0006101E /* 29.json in Resources */,
-				FEE1F1A81BEB2F350096F7E4 /* Main.storyboard in Resources */,
 				70002FE91BF5AC9D0006101E /* 8.json in Resources */,
 				70002FE21BF5AC9D0006101E /* 65.json in Resources */,
 				70002FAE1BF5AC9D0006101E /* 18.json in Resources */,
@@ -699,25 +691,6 @@
 			targetProxy = FEE1F1BF1BEB2F360096F7E4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		FEE1F1A61BEB2F350096F7E4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FEE1F1A71BEB2F350096F7E4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		FEE1F1AB1BEB2F350096F7E4 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FEE1F1AC1BEB2F350096F7E4 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		FEE1F1C51BEB2F360096F7E4 /* Debug */ = {

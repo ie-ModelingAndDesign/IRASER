@@ -125,7 +125,7 @@ class ViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate,
     }
     
     func sethistorylist() {
-        tableView.frame         =   CGRectMake(0, 50, 320, 200);
+        tableView.frame         =   CGRectMake(0, 50, contentView.frame.size.width, 200);
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.view.addSubview(tableView)
         self.tableView.estimatedRowHeight = 100.0
@@ -145,7 +145,6 @@ class ViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate,
     func textFieldShouldReturn(textField: UITextField) -> Bool{
         mytextbox.text = textField.text
         // キーボードを閉じる
-        print("aaaa")
         textField.resignFirstResponder()
         return true
     }

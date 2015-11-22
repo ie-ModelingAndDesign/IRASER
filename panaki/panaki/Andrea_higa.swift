@@ -21,6 +21,8 @@ class Andrea_higa {
         if file == "0" {
             return "パナキ"
         } else if file == "71" {
+            return "なにも入力されませんでした"
+        } else if file == "72" {
             return "エラー" // エラーの対処を考える
         }
 

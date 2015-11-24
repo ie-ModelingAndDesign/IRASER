@@ -236,15 +236,22 @@ class Andrea_higa_word {
                 break
             case "ぱ", "ん":
                 break
-            default:
+            case "e":
                 filename = 71
                 break
-        } // "ぱ", "ん" は 0 を返し, 何かしらのエラーは 71 を返す。(絵文字や英字など "ゔ" も, その他の記号の処理)
+            default:
+                filename = 72
+                break
+        } // "ぱ", "ん" は 0 を返し, 何かしらのエラーは 72 を返す。空文字は 71 を返す.(絵文字や英字など "ゔ" も, その他の記号の処理)
         
         return String(filename)
     }
     
     func adjustChar(word: String) -> Character {
+         //空文字判断wordが空文字なら"e"を返す
+        if word.isEmpty{
+            return "e"
+        }
         let filtering = "[ぁぃぅぇぉっゃゅょゎ]"
         var lastChar = word.characters.last!
         // let filtering2 = 「ゐ ゑ」の対処を行う

@@ -31,6 +31,7 @@ class Andrea_higa {
         let data = fileHandle?.readDataToEndOfFile()
         let json = JSON(data: data!).dictionaryObject!
         let cnt = json.count
+        var returncount = 0
         
         var return_word = ""
         // 語彙がなくなったときの処理を考える
@@ -40,10 +41,14 @@ class Andrea_higa {
             if return_word.characters.last! == "ん" || return_word.characters.last! == "ゔ" {
                 Andrea_higa.dict[return_word] = 1
             }
-        } while Andrea_higa.dict[return_word] == 1
+            returncount = ++returncount
+        } while Andrea_higa.dict[return_word] == 1 || returncount == cnt
         
         Andrea_higa.dict[return_word] = 1
 
+        if returncount == cnt{
+            return_word = "CPUの語彙がなくなりました"
+        }
         return return_word
     }
 }

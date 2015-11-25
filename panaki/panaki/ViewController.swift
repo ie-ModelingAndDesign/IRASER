@@ -4,40 +4,36 @@
 //
 //  Created by Kazuma from IRASER on 2015/11/05.
 //  Copyright © 2015年 Kazuma. All rights reserved.
-//
-// iphone size ... 6
+
 
 import UIKit
 
 class ViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource{
 
     let lets = Andrea_higa()  // Main method
+    let word = Andrea_higa_word() // Use for adjustChar method
     
-    let mytextbox: UITextField = UITextField()
-    let button01 : UIButton = UIButton()
+    let mytextbox = UITextField()
+    let button01 = UIButton()
     let contentView = UIView()
-    var tableView: UITableView  =   UITableView()
+    var tableView = UITableView()
     var items: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate      =   self
-        tableView.dataSource    =   self
+        tableView.delegate = self
+        tableView.dataSource = self
         mytextbox.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
-        setContentView()
-        //button生成
-        setbutton01()
         button01.addTarget(self , action: "push:", forControlEvents: .TouchUpInside)
-        //ここまで
-        sethistorylist()
-        //textfield生成
-        setmytextbox()
+        setContentView() // contentview
+        sethistorylist() // tablecell
+        setmytextbox() // textbox
+        setbutton01() // button
         
         
-        let words = "いす"
-        items.append(words)
-        
+        let words = "しりとり"
+        items.append("💻" + words)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -52,11 +48,34 @@ class ViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate,
     }
     
     func push(sender: UIButton){
-        mytextbox.resignFirstResponder()
-        items.append(self.mytextbox.text!)
-        items.append(lets.siritori(self.mytextbox.text!))
-        self.mytextbox.text = ""
-        self.tableView.reloadData()
+        // mytextbox.resignFirstResponder()
+        if self.mytextbox.text!.characters.first == word.adjustChar(items.last!) {
+            items.append("😁" + self.mytextbox.text!)
+            items.append("💻" + lets.siritori(self.mytextbox.text!))
+            self.mytextbox.text = ""
+            self.mytextbox.placeholder = "ここに文字を入力すると良いよ"
+            tableViewScrollToBottom(true)
+            self.tableView.reloadData()
+        } else {
+            self.mytextbox.text = ""
+            self.mytextbox.placeholder = "ちゃんとパナキしてよね！"
+        }
+    }
+    
+    
+    // http://stackoverflow.com/questions/26244293/scrolltorowatindexpath-with-uitableview-does-not-work
+    func tableViewScrollToBottom(animated: Bool) {
+        let delay = 0.1 * Double(NSEC_PER_SEC)
+        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+        dispatch_after(time, dispatch_get_main_queue(), {
+            let numberOfSections = self.tableView.numberOfSections
+            let numberOfRows = self.tableView.numberOfRowsInSection(numberOfSections-1)
+            
+            if numberOfRows > 0 {
+                let indexPath = NSIndexPath(forRow: numberOfRows-1, inSection: (numberOfSections-1))
+                self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: animated)
+            }
+        })
     }
     
 
@@ -81,6 +100,7 @@ class ViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate,
                 self.contentView.frame = frame
                 self.setmytextbox()
                 self.setbutton01()
+                self.sethistorylist()
             }
         })
         
@@ -107,7 +127,7 @@ class ViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate,
         self.view.addSubview(self.contentView)
     }
     
-    func setmytextbox () {
+    func setmytextbox() {
         mytextbox.frame = CGRectMake(0, self.contentView.frame.height - 60, self.contentView.frame.size.width - 75, 60)
         mytextbox.placeholder = "ここに文字を入力すると良いよ"
         mytextbox.borderStyle = UITextBorderStyle.RoundedRect
@@ -121,14 +141,16 @@ class ViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate,
         button01.layer.cornerRadius = 10.0
         button01.layer.masksToBounds = true
         self.contentView.addSubview(button01)
-        
     }
     
     func sethistorylist() {
-        tableView.frame         =   CGRectMake(0, 50, contentView.frame.size.width, 200);
+        let btnh: CGFloat = 60
+        let sbh = UIApplication.sharedApplication().statusBarFrame.size.height
+        tableView.frame = CGRectMake(0, sbh, contentView.frame.size.width, contentView.frame.size.height - sbh - btnh)
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        self.view.addSubview(tableView)
-        self.tableView.estimatedRowHeight = 100.0
+        self.contentView.addSubview(tableView)
+        self.tableView.estimatedRowHeight = 20.0
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
@@ -139,19 +161,20 @@ class ViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate,
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
         cell.textLabel!.text = self.items[indexPath.row]
+        cell.textLabel!.lineBreakMode = .ByCharWrapping
         return cell
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool{
         mytextbox.text = textField.text
-        // キーボードを閉じる
-        textField.resignFirstResponder()
+        textField.resignFirstResponder() // キーボードを閉じる
         return true
     }
     
     override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
         // view の 階層順
         setContentView()
+        sethistorylist()
         setmytextbox()
         setbutton01()
     }

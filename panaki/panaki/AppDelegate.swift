@@ -7,14 +7,23 @@
 //
 
 import UIKit
+import AVFoundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    func application(application: UIApplication, willFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
+        let panaki = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("panaki", ofType: "aiff")!)
+        var sound: SystemSoundID = 0
+        AudioServicesCreateSystemSoundID(panaki, &sound)
+        AudioServicesPlaySystemSound(sound)
+        return true
+    }
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        sleep(1)
+        NSThread.sleepForTimeInterval(1.0)
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         let viewController = ViewController()
         self.window!.rootViewController = viewController

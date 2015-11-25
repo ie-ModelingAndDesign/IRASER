@@ -80,6 +80,7 @@
 		70002FEB1BF5AC9D0006101E /* dicgen.pl in Resources */ = {isa = PBXBuildFile; fileRef = 70002FA21BF5AC9D0006101E /* dicgen.pl */; };
 		70002FEC1BF5AC9D0006101E /* dictionary.txt in Resources */ = {isa = PBXBuildFile; fileRef = 70002FA31BF5AC9D0006101E /* dictionary.txt */; };
 		70002FED1BF5AC9D0006101E /* wordmap.txt in Resources */ = {isa = PBXBuildFile; fileRef = 70002FA41BF5AC9D0006101E /* wordmap.txt */; };
+		70114C6C1C060C02003EB634 /* panaki.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 70114C6B1C060C02003EB634 /* panaki.aiff */; };
 		7016A25F1BF5AE8D001BC388 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7016A25E1BF5AE8D001BC388 /* SwiftyJSON.framework */; };
 		7016A2611BF5EC08001BC388 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7016A2601BF5EC08001BC388 /* SwiftyJSON.framework */; };
 		7016A2621BF5F3F4001BC388 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE1F1A21BEB2F350096F7E4 /* AppDelegate.swift */; };
@@ -191,6 +192,7 @@
 		70002FA21BF5AC9D0006101E /* dicgen.pl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.perl; path = dicgen.pl; sourceTree = "<group>"; };
 		70002FA31BF5AC9D0006101E /* dictionary.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dictionary.txt; sourceTree = "<group>"; };
 		70002FA41BF5AC9D0006101E /* wordmap.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wordmap.txt; sourceTree = "<group>"; };
+		70114C6B1C060C02003EB634 /* panaki.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = panaki.aiff; sourceTree = "<group>"; };
 		7016A25E1BF5AE8D001BC388 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		7016A2601BF5EC08001BC388 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		704AEB2F1BEB307000721ACD /* Andrea_higa_word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Andrea_higa_word.swift; sourceTree = "<group>"; };
@@ -367,6 +369,7 @@
 			isa = PBXGroup;
 			children = (
 				FE9E06351C0439BF007C6AED /* sprsh.png */,
+				70114C6B1C060C02003EB634 /* panaki.aiff */,
 				FE9E06331C04295A007C6AED /* Launch Screen.storyboard */,
 				FEE1F1A21BEB2F350096F7E4 /* AppDelegate.swift */,
 				FEE1F1A41BEB2F350096F7E4 /* ViewController.swift */,
@@ -536,6 +539,7 @@
 				70002FDA1BF5AC9D0006101E /* 58.json in Resources */,
 				70002FED1BF5AC9D0006101E /* wordmap.txt in Resources */,
 				70002FDE1BF5AC9D0006101E /* 61.json in Resources */,
+				70114C6C1C060C02003EB634 /* panaki.aiff in Resources */,
 				70002FE11BF5AC9D0006101E /* 64.json in Resources */,
 				70002FB91BF5AC9D0006101E /* 28.json in Resources */,
 				70002FD41BF5AC9D0006101E /* 52.json in Resources */,

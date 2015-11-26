@@ -248,10 +248,12 @@ class Andrea_higa_word {
     }
     
     func adjustChar(word: String) -> Character {
+        /*
          //空文字判断wordが空文字なら"e"を返す
         if word.isEmpty{
             return "e"
         }
+        */ // 代わりに ViewController の push() を変更
         let filtering = "[ぁぃぅぇぉっゃゅょゎ]"
         var lastChar = word.characters.last!
         // let filtering2 = 「ゐ ゑ」の対処を行う

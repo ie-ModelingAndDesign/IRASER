@@ -22,10 +22,14 @@ class Andrea_higa_word {
     // Singleton
     static let instance: Andrea_higa_word = Andrea_higa_word()
     
+    var score = 0;
+    
     func find(word: String) -> String{
         var filename = 0
         let andrea = Andrea_higa_word()
         let Char: Character = andrea.adjustChar(word)
+        //score counterを追加
+        score = score + 1;
         switch Char {
             case "あ":
                 filename = 1
@@ -243,7 +247,7 @@ class Andrea_higa_word {
                 filename = 72
                 break
         } // "ぱ", "ん" は 0 を返し, 何かしらのエラーは 72 を返す。空文字は 71 を返す.(絵文字や英字など "ゔ" も, その他の記号の処理)
-        
+
         return String(filename)
     }
     

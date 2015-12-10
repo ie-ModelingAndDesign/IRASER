@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSThread.sleepForTimeInterval(1.0)
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         let viewController = ViewController()
+        GKLocalPlayerUtil.login(viewController)
         self.window!.rootViewController = viewController
         self.window!.makeKeyAndVisible()
         // Override point for customization after application launch.

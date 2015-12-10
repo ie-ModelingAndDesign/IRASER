@@ -13,7 +13,8 @@ class Andrea_higa {
     // Singleton
     static let instance = Andrea_higa()
     private static var dict: Dictionary<String, Int> = Dictionary()
-        
+    
+    
     func siritori(word: String) -> String {
         let andrea = Andrea_higa_word()
         
@@ -23,9 +24,9 @@ class Andrea_higa {
         } else if file == "71" {
             return "なにも入力されませんでした"
         } else if file == "72" {
-            return "エラー" // エラーの対処を考える
+            return "エラー " // エラーの対処を考える
         }
-
+        
         let path = NSBundle.mainBundle().pathForResource(file, ofType: "json")!
         let fileHandle = NSFileHandle(forReadingAtPath: path)
         let data = fileHandle?.readDataToEndOfFile()
@@ -35,6 +36,9 @@ class Andrea_higa {
         var i = 0
         
         var return_word = ""
+        
+        
+        
         // 語彙がなくなったときの処理を考える
         repeat {
             let index = Int(UInt32(i))
@@ -50,7 +54,7 @@ class Andrea_higa {
 
         if returncount == cnt{
             return_word = "CPUの語彙がなくなりました"
-        }
+            }
         return return_word
     }
 }

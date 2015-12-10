@@ -18,7 +18,8 @@ class ViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate,
     let contentView = UIView()
     var tableView = UITableView()
     var items: [String] = []
-
+    var score = 0;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -56,6 +57,7 @@ class ViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate,
             self.mytextbox.placeholder = "ここに文字を入力すると良いよ"
             tableViewScrollToBottom(true)
             self.tableView.reloadData()
+            score = score + 1;
         } else {
             self.mytextbox.text = ""
             self.mytextbox.placeholder = "ちゃんとパナキしてよね！"

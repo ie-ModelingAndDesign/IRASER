@@ -22,14 +22,11 @@ class Andrea_higa_word {
     // Singleton
     static let instance: Andrea_higa_word = Andrea_higa_word()
     
-    var score = 0;
     
     func find(word: String) -> String{
         var filename = 0
         let andrea = Andrea_higa_word()
         let Char: Character = andrea.adjustChar(word)
-        //score counterを追加
-        score = score + 1;
         switch Char {
             case "あ":
                 filename = 1

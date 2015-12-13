@@ -99,6 +99,7 @@
 		FEE1F1AA1BEB2F350096F7E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEE1F1A91BEB2F350096F7E4 /* Assets.xcassets */; };
 		FEE1F1B81BEB2F360096F7E4 /* panakiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE1F1B71BEB2F360096F7E4 /* panakiTests.swift */; };
 		FEE1F1C31BEB2F360096F7E4 /* panakiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE1F1C21BEB2F360096F7E4 /* panakiUITests.swift */; };
+		FEFDB8FC1C1E10D10080BE13 /* sendbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = FEFDB8FB1C1E10D10080BE13 /* sendbutton.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -214,6 +215,7 @@
 		FEE1F1BE1BEB2F360096F7E4 /* panakiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = panakiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEE1F1C21BEB2F360096F7E4 /* panakiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = panakiUITests.swift; sourceTree = "<group>"; };
 		FEE1F1C41BEB2F360096F7E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEFDB8FB1C1E10D10080BE13 /* sendbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sendbutton.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -369,6 +371,7 @@
 			isa = PBXGroup;
 			children = (
 				FE9E06351C0439BF007C6AED /* sprsh.png */,
+				FEFDB8FB1C1E10D10080BE13 /* sendbutton.png */,
 				70114C6B1C060C02003EB634 /* panaki.aiff */,
 				FE9E06331C04295A007C6AED /* Launch Screen.storyboard */,
 				FEE1F1A21BEB2F350096F7E4 /* AppDelegate.swift */,
@@ -552,6 +555,7 @@
 				70002FB61BF5AC9D0006101E /* 25.json in Resources */,
 				70002FD61BF5AC9D0006101E /* 54.json in Resources */,
 				70002FE41BF5AC9D0006101E /* 67.json in Resources */,
+				FEFDB8FC1C1E10D10080BE13 /* sendbutton.png in Resources */,
 				70002FD51BF5AC9D0006101E /* 53.json in Resources */,
 				70002FEA1BF5AC9D0006101E /* 9.json in Resources */,
 				70002FC91BF5AC9D0006101E /* 42.json in Resources */,

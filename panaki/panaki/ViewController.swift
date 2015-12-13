@@ -13,6 +13,9 @@ class ViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate,
     let lets = Andrea_higa()  // Main method
     let word = Andrea_higa_word() // Use for adjustChar method
     
+    let buttonimage = UIImage(named: "sendbutton.png")
+    let inputBorder = CALayer()
+    let borderWidth = CGFloat(1.0)
     let mytextbox = UITextField()
     let button01 = UIButton()
     let contentView = UIView()
@@ -123,25 +126,27 @@ class ViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate,
     }
     
     func setContentView() {
-        self.contentView.backgroundColor = UIColor.blueColor()
+        self.contentView.backgroundColor = UIColor.whiteColor()
         let contentViewFrame = self.view.frame
         self.contentView.frame = contentViewFrame
         self.view.addSubview(self.contentView)
     }
     
     func setmytextbox() {
-        mytextbox.frame = CGRectMake(0, self.contentView.frame.height - 60, self.contentView.frame.size.width - 75, 60)
+        mytextbox.frame = CGRectMake(5, self.contentView.frame.height - 55, self.contentView.frame.size.width - 75, 55)
+        mytextbox.frame.size.height = 50
         mytextbox.placeholder = "ここに文字を入力すると良いよ"
-        mytextbox.borderStyle = UITextBorderStyle.RoundedRect
+        //mytextbox.borderStyle = UITextBorderStyle.RoundedRect
         self.contentView.addSubview(mytextbox)
     }
     
     func setbutton01() {
-        button01.frame = CGRectMake(self.mytextbox.frame.size.width + 10, self.contentView.frame.height - 60, 60, 60)
-        button01.backgroundColor = UIColor.whiteColor()
-        button01.setTitle("✈", forState: UIControlState.Normal)
-        button01.layer.cornerRadius = 10.0
-        button01.layer.masksToBounds = true
+        button01.frame = CGRectMake(self.mytextbox.frame.size.width + 20, self.contentView.frame.height - 55, 50, 50)
+        //button01.backgroundColor = UIColor.whiteColor()
+        //button01.setTitle("✈", forState: UIControlState.Normal)
+        button01.setImage(buttonimage, forState: .Normal)
+        //button01.layer.cornerRadius = 10.0
+        //button01.layer.masksToBounds = true
         self.contentView.addSubview(button01)
     }
     
@@ -154,6 +159,7 @@ class ViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate,
         self.tableView.estimatedRowHeight = 20.0
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.backgroundColor = UIColor.lightGrayColor()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

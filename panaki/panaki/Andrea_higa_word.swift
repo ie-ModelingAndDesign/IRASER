@@ -22,11 +22,72 @@ class Andrea_higa_word {
     // Singleton
     static let instance: Andrea_higa_word = Andrea_higa_word()
     
+    func isExistword(word: String) -> Bool {
+        let file = isExistfind(word)
+        NSLog("%@", word)
+        let path = NSBundle.mainBundle().pathForResource(file, ofType: "json")!
+        NSLog("%@", path)
+        let data = NSData(contentsOfFile: path)
+        let json = JSON(data: data!)
+        
+        return json[word] ==  1
+    }
+    
+    func adjustfirstChar(word: String) -> Character {
+
+        let filtering = "[ぁぃぅぇぉっゃゅょゎ]"
+        let firstChar = word.characters.first!
+        
+        return firstChar.isMatch(filtering) ? uppercaseHiragana(firstChar) : firstChar
+    }
+    
+    func isExistfind(word: String) -> String{
+        let andrea = Andrea_higa_word()
+        let Char: Character = andrea.adjustfirstChar(word)
+
+        return String(files(Char))
+    }
+    
+    private func uppercaseHiragana(char: Character) -> Character{
+        switch char {
+        case "ぁ":
+            return "あ"
+        case "ぃ":
+            return "い"
+        case "ぅ":
+            return "う"
+        case "ぇ":
+            return "え"
+        case "ぉ":
+            return "お"
+        case "っ":
+            return "つ"
+        case "ゃ":
+            return "や"
+        case "ゅ":
+            return "ゆ"
+        case "ょ":
+            return "よ"
+        case "ゎ":
+            return "わ"
+        default:
+            break
+        }
+        
+        return "!"
+    }
     
     func find(word: String) -> String{
-        var filename = 0
+        
         let andrea = Andrea_higa_word()
         let Char: Character = andrea.adjustChar(word)
+
+
+        return String(files(Char))
+    }
+    
+    func files(Char: Character) -> Int {
+        var filename = 0
         switch Char {
             case "あ":
                 filename = 1
@@ -243,9 +304,8 @@ class Andrea_higa_word {
             default:
                 filename = 72
                 break
-        } // "ぱ", "ん" は 0 を返し, 何かしらのエラーは 72 を返す。空文字は 71 を返す.(絵文字や英字など "ゔ" も, その他の記号の処理)
-
-        return String(filename)
+        }
+        return filename
     }
     
     func adjustChar(word: String) -> Character {
@@ -270,32 +330,4 @@ class Andrea_higa_word {
         return lastChar
     }
     
-    private func uppercaseHiragana(char: Character) -> Character{
-        switch char {
-            case "ぁ":
-                return "あ"
-            case "ぃ":
-                return "い"
-            case "ぅ":
-                return "う"
-            case "ぇ":
-                return "え"
-            case "ぉ":
-                return "お"
-            case "っ":
-                return "つ"
-            case "ゃ":
-                return "や"
-            case "ゅ":
-                return "ゆ"
-            case "ょ":
-                return "よ"
-            case "ゎ":
-                return "わ"
-            default:
-                break
-        }
-        
-        return "!"
-    }
 }

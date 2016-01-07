@@ -53,7 +53,7 @@ class ViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate,
     
     func push(sender: UIButton){
         // mytextbox.resignFirstResponder()
-        if self.mytextbox.text!.characters.first == word.adjustChar(items.last!) {
+        if self.mytextbox.text!.characters.first == word.adjustChar(items.last!) && word.isExistword(self.mytextbox.text!){
             items.append("😁" + self.mytextbox.text!)
             items.append("💻" + lets.siritori(self.mytextbox.text!))
             self.mytextbox.text = ""

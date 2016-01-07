@@ -14,7 +14,6 @@ class Andrea_higa {
     static let instance = Andrea_higa()
     private static var dict: Dictionary<String, Int> = Dictionary()
     
-    
     func siritori(word: String) -> String {
         let andrea = Andrea_higa_word()
         

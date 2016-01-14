@@ -11,16 +11,18 @@ import GameKit
     
 
 //game center にログインするための処理
-struct GKLocalPlayerUtil {
-    static var localPlayer:GKLocalPlayer = GKLocalPlayer();
+class Andrea_higa_score {
+
+    let localPlayer = GKLocalPlayer();
+    let target = UIViewController();
     
-    static func login(target:UIViewController){
-        self.localPlayer = GKLocalPlayer();
+    func login(){
+        
         self.localPlayer.authenticateHandler = {(viewController, error) -> Void in
             
-            if ((viewController) != nil) {
+            if (viewController != nil) {
                 print("ログイン確認処理：失敗-ログイン画面を表示");
-                target.presentViewController(viewController!, animated: true, completion: nil);
+                self.target.presentViewController(viewController!, animated: true, completion: nil);
             }else{
                 print("ログイン確認処理：成功");
                 if (error == nil){
@@ -31,13 +33,10 @@ struct GKLocalPlayerUtil {
             }
         }
     }
-}
-
-//game center　にスコアを送信するための処理
-struct GKScoreUtil {
     
+    //game center　にスコアを送信するための処理
     static func reportScores(value:Int, leaderboardid:String){
-        let score:GKScore = GKScore();
+        let score = GKScore();
         score.value = Int64(value);
         score.leaderboardIdentifier = leaderboardid;
         let scoreArr:[GKScore] = [score];

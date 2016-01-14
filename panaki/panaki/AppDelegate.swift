@@ -25,10 +25,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         NSThread.sleepForTimeInterval(1.0)
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        let viewController = ViewController()
-        GKLocalPlayerUtil.login(viewController)
-        self.window!.rootViewController = viewController
+       // let viewController = Andrea_higa_score()
+       // Andrea_higa_score.login()
+        let mainviewController = ViewController()
+        let discriptionViewController = DiscriptionView()
+        let navigationController = UINavigationController()
+        navigationController.viewControllers = [discriptionViewController, mainviewController]
+        self.window!.rootViewController = navigationController
         self.window!.makeKeyAndVisible()
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        UINavigationBar.appearance().barTintColor = UIColor(red: 0.153, green: 0.682, blue: 0.376, alpha: 1)
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        UINavigationBar.appearance().shadowImage = UIImage()
+        
         // Override point for customization after application launch.
         return true
     }

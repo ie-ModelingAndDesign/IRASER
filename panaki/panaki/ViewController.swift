@@ -22,6 +22,7 @@ class ViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate,
     var tableView = UITableView()
     var items: [String] = []
     var score = 0;
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +42,10 @@ class ViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate,
     }
     
     override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBar.hidden = false
+        let backButtonItem = UIBarButtonItem(title: "説明", style: .Plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = backButtonItem
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
@@ -60,7 +65,8 @@ class ViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate,
             self.mytextbox.placeholder = "ここに文字を入力すると良いよ"
             tableViewScrollToBottom(true)
             self.tableView.reloadData()
-            score = score + 1;
+            score++;
+            NSLog("Score: %d", score)
         } else {
             self.mytextbox.text = ""
             self.mytextbox.placeholder = "ちゃんとパナキしてよね！"

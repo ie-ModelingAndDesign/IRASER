@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import JSQMessagesViewController
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -28,10 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        // let viewController = Andrea_higa_score()
        // Andrea_higa_score.login()
         let mainviewController = ViewController()
-        let discriptionViewController = DiscriptionView()
-        let navigationController = UINavigationController()
-        navigationController.viewControllers = [discriptionViewController, mainviewController]
-        self.window!.rootViewController = navigationController
+        self.window!.rootViewController = mainviewController
         self.window!.makeKeyAndVisible()
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         UINavigationBar.appearance().barTintColor = UIColor(red: 0.153, green: 0.682, blue: 0.376, alpha: 1)

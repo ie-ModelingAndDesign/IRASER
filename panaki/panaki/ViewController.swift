@@ -7,190 +7,153 @@
 
 
 import UIKit
+import JSQMessagesViewController
 
-class ViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource{
-
+class ViewController: JSQMessagesViewController {
+    
     let lets = Andrea_higa()  // Main method
     let word = Andrea_higa_word() // Use for adjustChar method
-    
-    let buttonimage = UIImage(named: "sendbutton.png")
-    let inputBorder = CALayer()
-    let borderWidth = CGFloat(1.0)
     let mytextbox = UITextField()
-    let button01 = UIButton()
-    let contentView = UIView()
-    var tableView = UITableView()
-    var items: [String] = []
-    var score = 0;
+    let navigationbar = UINavigationBar()
 
+    var messages: [JSQMessage]?
+    var incomingBubble: JSQMessagesBubbleImage!
+    var outgoingBubble: JSQMessagesBubbleImage!
+    var incomingAvatar: JSQMessagesAvatarImage!
+    var outgoingAvatar: JSQMessagesAvatarImage!
+    var beforeText : JSQMessage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
-        mytextbox.delegate = self
-        // Do any additional setup after loading the view, typically from a nib.
-        button01.addTarget(self , action: "push:", forControlEvents: .TouchUpInside)
-        setContentView() // contentview
-        sethistorylist() // tablecell
-        setmytextbox() // textbox
-        setbutton01() // button
         
+        let lbtn = UIButton(type: .InfoLight)
+        lbtn.setTitle("？", forState: .Normal)
         
-        let words = "しりとり"
-        items.append("💻" + words)
+        lbtn.addTarget(self, action: "appearDiscription", forControlEvents: .TouchDown)
+        self.inputToolbar!.contentView!.leftBarButtonItem = lbtn;
+        self.inputToolbar?.contentView?.textView?.placeHolder = ""
+        //自分のsenderId, senderDisokayNameを設定
+        self.senderId = "user1"
+        self.senderDisplayName = "hoge"
+        let rightButton = UIButton(frame: CGRectZero)
+        let sendImage = UIImage(named: "sendbutton.png")
+        rightButton.setImage(sendImage, forState: UIControlState.Normal)
+        
+        self.inputToolbar!.contentView!.rightBarButtonItemWidth = CGFloat(34.0)
+        
+        self.inputToolbar!.contentView!.rightBarButtonItem = rightButton
+    
+        
+    //吹き出しの設定
+        let bubbleFactory = JSQMessagesBubbleImageFactory()
+        self.incomingBubble = bubbleFactory.incomingMessagesBubbleImageWithColor(UIColor.jsq_messageBubbleLightGrayColor())
+        self.outgoingBubble = bubbleFactory.outgoingMessagesBubbleImageWithColor(UIColor.jsq_messageBubbleGreenColor())
+        
+        //アバターの設定
+        //self.incomingAvatar = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named: "hinako")!, diameter: 64)
+        //self.outgoingAvatar = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named: "keita")!, diameter: 64)
+        
+        //メッセージデータの配列を初期化
+        self.messages = [JSQMessage(senderId: senderId, displayName: senderDisplayName, text: "りんご")]
+        
     }
+    
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBar.hidden = false
         let backButtonItem = UIBarButtonItem(title: "説明", style: .Plain, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = backButtonItem
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
-    }
-    
-    func push(sender: UIButton){
-        // mytextbox.resignFirstResponder()
-        if self.mytextbox.text!.characters.first == word.adjustChar(items.last!) && word.isExistword(self.mytextbox.text!) && items.indexOf("😁" + self.mytextbox.text!) == nil {
-            items.append("😁" + self.mytextbox.text!)
-            items.append("💻" + lets.siritori(self.mytextbox.text!))
-            self.mytextbox.text = ""
-            self.mytextbox.placeholder = "ここに文字を入力すると良いよ"
-            tableViewScrollToBottom(true)
-            self.tableView.reloadData()
-            score++;
-            NSLog("Score: %d", score)
-        } else {
-            self.mytextbox.text = ""
-            self.mytextbox.placeholder = "ちゃんとパナキしてよね！"
-        }
-    }
-    
-    
-    // http://stackoverflow.com/questions/26244293/scrolltorowatindexpath-with-uitableview-does-not-work
-    func tableViewScrollToBottom(animated: Bool) {
-        let delay = 0.1 * Double(NSEC_PER_SEC)
-        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-        dispatch_after(time, dispatch_get_main_queue(), {
-            let numberOfSections = self.tableView.numberOfSections
-            let numberOfRows = self.tableView.numberOfRowsInSection(numberOfSections-1)
-            
-            if numberOfRows > 0 {
-                let indexPath = NSIndexPath(forRow: numberOfRows-1, inSection: (numberOfSections-1))
-                self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: animated)
-            }
-        })
-    }
-    
-
-    func keyboardWillShow(notification: NSNotification) {
-        let keyboardheight = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
-        adjustingHeight(self.view.frame.size.height - keyboardheight.size.height, notification: notification)
-    }
-    
-    func keyboardWillHide(notification: NSNotification) {
-        let keyboardheight = (notification.userInfo![UIKeyboardFrameBeginUserInfoKey] as! NSValue).CGRectValue()
-        adjustingHeight(self.contentView.frame.size.height + keyboardheight.size.height, notification: notification)
-    }
-    
-    func adjustingHeight(height: CGFloat, notification: NSNotification) {
-        let duration = notification.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! NSTimeInterval
-        let keyboard = (notification.userInfo![UIKeyboardFrameBeginUserInfoKey] as! NSValue).CGRectValue()
-        
-        UIView.animateWithDuration(duration, animations: { () -> Void in
-            if keyboard.size.height > 0.0 {
-                var frame = self.contentView.frame
-                frame.size.height = height
-                self.contentView.frame = frame
-                self.setmytextbox()
-                self.setbutton01()
-                self.sethistorylist()
-            }
-        })
-        
-    }
-    
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        self.view.endEditing(true)
-    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        self.tableView.reloadData()
+    //Sendボタンが押された時に呼ばれる
+    override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {
+        
+        print(self.inputToolbar?.contentView?.textView?.text)
+        //新しいメッセージデータを追加する
+        let playermesssage = JSQMessage(senderId: senderId, displayName: senderDisplayName, text: text)
+    
+        if (text.characters.first == word.adjustChar((self.messages?.last?.text)!) && word.isExistword(text) && usedWordSearch(text) == false && word.isExistword(text)) {
+            self.inputToolbar?.contentView?.textView?.placeHolder = ""
+            self.messages?.append(playermesssage)
+            self.finishReceivingMessageAnimated(true)
+            self.receiveAutoMessage()
+        } else {
+            self.inputToolbar?.contentView?.textView?.placeHolder = "ちゃんとパナキしてよね！！"
+        }
+            
+        
+        //メッセジの送信処理を完了する(画面上にメッセージが表示される)
+        
+        
+        //擬似的に自動でメッセージを受信
+        self.finishSendingMessageAnimated(true)
+    
     }
     
-    func setContentView() {
-        self.contentView.backgroundColor = UIColor.whiteColor()
-        let contentViewFrame = self.view.frame
-        self.contentView.frame = contentViewFrame
-        self.view.addSubview(self.contentView)
+    //アイテムごとに参照するメッセージデータを返す
+    override func collectionView(collectionView: JSQMessagesCollectionView!, messageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageData! {
+        return self.messages?[indexPath.item]
     }
     
-    func setmytextbox() {
-        mytextbox.frame = CGRectMake(5, self.contentView.frame.height - 55, self.contentView.frame.size.width - 75, 55)
-        mytextbox.frame.size.height = 50
-        mytextbox.placeholder = "ここに文字を入力すると良いよ"
-        //mytextbox.borderStyle = UITextBorderStyle.RoundedRect
-        self.contentView.addSubview(mytextbox)
+    //アイテムごとのMessageBubble(背景)を返す
+    override func collectionView(collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageBubbleImageDataSource! {
+        let message = self.messages?[indexPath.item]
+        if message?.senderId == self.senderId {
+            return self.outgoingBubble
+        }
+        return self.incomingBubble
     }
     
-    func setbutton01() {
-        button01.frame = CGRectMake(self.mytextbox.frame.size.width + 20, self.contentView.frame.height - 55, 50, 50)
-        //button01.backgroundColor = UIColor.whiteColor()
-        //button01.setTitle("✈", forState: UIControlState.Normal)
-        button01.setImage(buttonimage, forState: .Normal)
-        //button01.layer.cornerRadius = 10.0
-        //button01.layer.masksToBounds = true
-        self.contentView.addSubview(button01)
+    //アイテムごとにアバター画像を返す
+    override func collectionView(collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageAvatarImageDataSource! {
+        let message = self.messages?[indexPath.item]
+        if message?.senderId == self.senderId {
+            return self.outgoingAvatar
+        }
+        return self.incomingAvatar
     }
     
-    func sethistorylist() {
-        let btnh: CGFloat = 60
-        let sbh = UIApplication.sharedApplication().statusBarFrame.size.height
-        tableView.frame = CGRectMake(0, sbh, contentView.frame.size.width, contentView.frame.size.height - sbh - btnh)
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        self.contentView.addSubview(tableView)
-        self.tableView.estimatedRowHeight = 20.0
-        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
-        self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.backgroundColor = UIColor.lightGrayColor()
+    //アイテムの総数を返す
+    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return (self.messages?.count)!
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.items.count
+    //返信メッセージを受信する
+    func receiveAutoMessage() {
+        NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "didFinishMessageTimer:", userInfo: nil, repeats: false)
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
-        cell.textLabel!.text = self.items[indexPath.row]
-        cell.textLabel!.lineBreakMode = .ByCharWrapping
-        return cell
+    func didFinishMessageTimer(sender: NSTimer) {
+        let message = JSQMessage(senderId: "user2", displayName: "underscore", text: lets.siritori((self.messages?.last?.text)!))
+        self.messages?.append(message)
+        self.finishReceivingMessageAnimated(true)
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool{
-        mytextbox.text = textField.text
-        textField.resignFirstResponder() // キーボードを閉じる
-        return true
+    func usedWordSearch(word: String) -> Bool {
+        var usedflag = false
+        for hikaku in self.messages!{
+            print(hikaku.text)
+            if (hikaku.text == word){
+                usedflag = true
+                break
+            }
+        }
+        return usedflag
+        
     }
     
-    override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
-        // view の 階層順
-        setContentView()
-        sethistorylist()
-        setmytextbox()
-        setbutton01()
+    func appearDiscription() {
+        let dc = DiscriptionView()
+        dc.modalPresentationStyle = .Popover
+        presentViewController(dc, animated: true, completion: nil)
     }
+    
+    
+    
 }
-

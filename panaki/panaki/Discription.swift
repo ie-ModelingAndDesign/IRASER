@@ -82,7 +82,7 @@ class DiscriptionView: UIViewController {
     }
     
     func backtogame () {
-        self.navigationController?.pushViewController(ViewController(), animated: true)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 
 

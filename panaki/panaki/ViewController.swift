@@ -15,6 +15,7 @@ class ViewController: JSQMessagesViewController {
     let word = Andrea_higa_word() // Use for adjustChar method
     let mytextbox = UITextField()
     let navigationbar = UINavigationBar()
+    let initMessage = "りんご"
 
     var messages: [JSQMessage]?
     var incomingBubble: JSQMessagesBubbleImage!
@@ -30,7 +31,7 @@ class ViewController: JSQMessagesViewController {
         lbtn.setTitle("？", forState: .Normal)
         
         lbtn.addTarget(self, action: "appearDiscription", forControlEvents: .TouchDown)
-        self.inputToolbar!.contentView!.leftBarButtonItem = lbtn;
+        self.inputToolbar!.contentView!.leftBarButtonItem = lbtn
         self.inputToolbar?.contentView?.textView?.placeHolder = ""
         //自分のsenderId, senderDisokayNameを設定
         self.senderId = "user1"
@@ -40,11 +41,10 @@ class ViewController: JSQMessagesViewController {
         rightButton.setImage(sendImage, forState: UIControlState.Normal)
         
         self.inputToolbar!.contentView!.rightBarButtonItemWidth = CGFloat(34.0)
-        
         self.inputToolbar!.contentView!.rightBarButtonItem = rightButton
     
         
-    //吹き出しの設定
+        //吹き出しの設定
         let bubbleFactory = JSQMessagesBubbleImageFactory()
         self.incomingBubble = bubbleFactory.incomingMessagesBubbleImageWithColor(UIColor.jsq_messageBubbleLightGrayColor())
         self.outgoingBubble = bubbleFactory.outgoingMessagesBubbleImageWithColor(UIColor.jsq_messageBubbleGreenColor())
@@ -54,7 +54,7 @@ class ViewController: JSQMessagesViewController {
         //self.outgoingAvatar = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named: "keita")!, diameter: 64)
         
         //メッセージデータの配列を初期化
-        self.messages = [JSQMessage(senderId: senderId, displayName: senderDisplayName, text: "りんご")]
+        self.messages = [JSQMessage(senderId: "user2", displayName: senderDisplayName, text: initMessage)]
         
     }
     
@@ -129,10 +129,33 @@ class ViewController: JSQMessagesViewController {
         NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "didFinishMessageTimer:", userInfo: nil, repeats: false)
     }
     
+    func presentScoreView(score: Int) {
+        let sv = DiscriptionView()
+        sv.modalPresentationStyle = .Popover
+        presentViewController(sv, animated: true, completion: nil)
+    }
+    
     func didFinishMessageTimer(sender: NSTimer) {
         let message = JSQMessage(senderId: "user2", displayName: "underscore", text: lets.siritori((self.messages?.last?.text)!))
         self.messages?.append(message)
         self.finishReceivingMessageAnimated(true)
+        if (self.messages?.last?.text)! == "パナキ" {
+            NSLog("パナキ")
+            presentScoreView((self.messages?.count)! / 2)
+        /*
+            let ac = UIAlertController(title: "ゲーム終了", message: "パナキされたので、あなたの負けです。\nもう一度？", preferredStyle: .ActionSheet)
+            let Continue = UIAlertAction(title: "続けろ！", style: .Default, handler: {
+                 (action:UIAlertAction!) -> Void in
+                
+                
+            })
+        */
+        }
+    }
+    
+    func reset() {
+        self.messages?.removeAll()
+        self.messages = [JSQMessage(senderId: "user2", displayName: senderDisplayName, text: initMessage)]
     }
     
     func usedWordSearch(word: String) -> Bool {
@@ -153,7 +176,5 @@ class ViewController: JSQMessagesViewController {
         dc.modalPresentationStyle = .Popover
         presentViewController(dc, animated: true, completion: nil)
     }
-    
-    
     
 }

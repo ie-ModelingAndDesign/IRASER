@@ -6,4 +6,5 @@ xcuserdata
 
 #CocoaPod
 Pods/*
+panaki/Pods/*
 Podfile.lock

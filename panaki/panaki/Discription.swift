@@ -52,7 +52,7 @@ class DiscriptionView: UIViewController {
         let rule2 = UILabel()
         let rule3 = UILabel()
         
-        rule1.frame = CGRectMake(self.view.frame.size.width / 2 - self.view.frame.size.width / 2, self.view.frame.size.height / 3, self.view.frame.size.width, 50)
+        rule1.frame = CGRectMake(0, self.view.frame.size.height / 3, self.view.frame.size.width, 50)
         rule1.backgroundColor = UIColor.whiteColor()
         rule1.text = "「ぱなき」とはようするにしりとりです"
         rule1.textColor = UIColor.redColor()

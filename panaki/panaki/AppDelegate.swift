@@ -31,10 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let mainviewController = ViewController()
         self.window!.rootViewController = mainviewController
         self.window!.makeKeyAndVisible()
-        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
-        UINavigationBar.appearance().barTintColor = UIColor(red: 0.153, green: 0.682, blue: 0.376, alpha: 1)
-        UINavigationBar.appearance().setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        UINavigationBar.appearance().shadowImage = UIImage()
         
         // Override point for customization after application launch.
         return true

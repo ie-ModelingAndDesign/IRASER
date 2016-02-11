@@ -27,6 +27,17 @@ class ViewController: JSQMessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        let bg = NSBundle.mainBundle().pathForResource("bg", ofType: "png")
+        let image_bg = UIImage(contentsOfFile: bg!)
+        let w = UIScreen.mainScreen().bounds.size.width
+        let h = w * 555 / 476
+        
+        let bgview = UIImageView(frame:  CGRect(x: 0, y: 30, width: w, height: h))
+        bgview.image = image_bg
+        self.collectionView?.backgroundColor = UIColor.clearColor()
+        self.view.insertSubview(bgview, atIndex: 0)
+        
         let lbtn = UIButton(type: .InfoLight)
         lbtn.setTitle("？", forState: .Normal)
         
@@ -46,8 +57,8 @@ class ViewController: JSQMessagesViewController {
         
         //吹き出しの設定
         let bubbleFactory = JSQMessagesBubbleImageFactory()
-        self.incomingBubble = bubbleFactory.incomingMessagesBubbleImageWithColor(UIColor.jsq_messageBubbleLightGrayColor())
-        self.outgoingBubble = bubbleFactory.outgoingMessagesBubbleImageWithColor(UIColor.jsq_messageBubbleGreenColor())
+        self.incomingBubble = bubbleFactory.incomingMessagesBubbleImageWithColor(UIColor.jsq_messageBubbleRedColor())
+        self.outgoingBubble = bubbleFactory.outgoingMessagesBubbleImageWithColor(UIColor.jsq_messageBubbleBlueColor())
         
         //アバターの設定
         //self.incomingAvatar = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named: "hinako")!, diameter: 64)
@@ -56,13 +67,6 @@ class ViewController: JSQMessagesViewController {
         //メッセージデータの配列を初期化
         self.messages = [JSQMessage(senderId: "user2", displayName: senderDisplayName, text: initMessage)]
         
-    }
-    
-    
-    override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBar.hidden = false
-        let backButtonItem = UIBarButtonItem(title: "説明", style: .Plain, target: nil, action: nil)
-        self.navigationItem.backBarButtonItem = backButtonItem
     }
     
     
@@ -130,7 +134,8 @@ class ViewController: JSQMessagesViewController {
     }
     
     func presentScoreView(score: Int) {
-        let sv = DiscriptionView()
+        let sv = scoreview()
+        sv.setScore(score)
         sv.modalPresentationStyle = .Popover
         presentViewController(sv, animated: true, completion: nil)
     }

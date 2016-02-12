@@ -96,6 +96,8 @@
 		707C4DA71C3E0A1C007494BE /* m2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 707C4DA31C3E0A1C007494BE /* m2.jpg */; };
 		707C4DA81C3E0A1C007494BE /* m4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 707C4DA41C3E0A1C007494BE /* m4.jpg */; };
 		707C4DA91C3E0A1C007494BE /* sendbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 707C4DA51C3E0A1C007494BE /* sendbutton.png */; };
+		70EC11D21C6E0135008D066C /* panaki.png in Resources */ = {isa = PBXBuildFile; fileRef = 70EC11D01C6E0135008D066C /* panaki.png */; };
+		70EC11D41C6E023C008D066C /* me.png in Resources */ = {isa = PBXBuildFile; fileRef = 70EC11D31C6E023C008D066C /* me.png */; };
 		A10A371741D6F7F4BA9988FF /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90E32F840A7DAF4CA91003A9 /* Pods.framework */; };
 		A849ECFC1C6C14E4005F42A7 /* scoreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A849ECFB1C6C14E4005F42A7 /* scoreview.swift */; };
 		A889D3381C6C3D69007C60BD /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = A889D3371C6C3D69007C60BD /* bg.png */; };
@@ -210,6 +212,8 @@
 		707C4DA31C3E0A1C007494BE /* m2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = m2.jpg; sourceTree = "<group>"; };
 		707C4DA41C3E0A1C007494BE /* m4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = m4.jpg; sourceTree = "<group>"; };
 		707C4DA51C3E0A1C007494BE /* sendbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sendbutton.png; sourceTree = "<group>"; };
+		70EC11D01C6E0135008D066C /* panaki.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = panaki.png; sourceTree = "<group>"; };
+		70EC11D31C6E023C008D066C /* me.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = me.png; sourceTree = "<group>"; };
 		90E32F840A7DAF4CA91003A9 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A849ECFB1C6C14E4005F42A7 /* scoreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = scoreview.swift; sourceTree = "<group>"; };
 		A889D3371C6C3D69007C60BD /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
@@ -356,6 +360,8 @@
 				707C4DA31C3E0A1C007494BE /* m2.jpg */,
 				707C4DA41C3E0A1C007494BE /* m4.jpg */,
 				707C4DA51C3E0A1C007494BE /* sendbutton.png */,
+				70EC11D31C6E023C008D066C /* me.png */,
+				70EC11D01C6E0135008D066C /* panaki.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -501,7 +507,7 @@
 				TargetAttributes = {
 					FEE1F19E1BEB2F350096F7E4 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = 4RW234Q67J;
+						DevelopmentTeam = 7KPS2AYDYF;
 					};
 					FEE1F1B21BEB2F360096F7E4 = {
 						CreatedOnToolsVersion = 7.1;
@@ -567,6 +573,7 @@
 				70002FBC1BF5AC9D0006101E /* 30.json in Resources */,
 				70002FC21BF5AC9D0006101E /* 36.json in Resources */,
 				70002FDA1BF5AC9D0006101E /* 58.json in Resources */,
+				70EC11D41C6E023C008D066C /* me.png in Resources */,
 				70002FED1BF5AC9D0006101E /* wordmap.txt in Resources */,
 				70002FDE1BF5AC9D0006101E /* 61.json in Resources */,
 				70114C6C1C060C02003EB634 /* panaki.aiff in Resources */,
@@ -612,6 +619,7 @@
 				FE9E06341C04295A007C6AED /* Launch Screen.storyboard in Resources */,
 				70002FBA1BF5AC9D0006101E /* 29.json in Resources */,
 				70002FE91BF5AC9D0006101E /* 8.json in Resources */,
+				70EC11D21C6E0135008D066C /* panaki.png in Resources */,
 				707C4DA81C3E0A1C007494BE /* m4.jpg in Resources */,
 				70002FE21BF5AC9D0006101E /* 65.json in Resources */,
 				70002FAE1BF5AC9D0006101E /* 18.json in Resources */,
@@ -829,13 +837,15 @@
 			baseConfigurationReference = FA1F8E38C5D8C9CE0CB78555 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = panaki/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = kazumalab.panaki;
+				PRODUCT_BUNDLE_IDENTIFIER = IRASER.panaki;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -845,13 +855,15 @@
 			baseConfigurationReference = F5150AE0067F7AD8597138DB /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = panaki/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = kazumalab.panaki;
+				PRODUCT_BUNDLE_IDENTIFIER = IRASER.panaki;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

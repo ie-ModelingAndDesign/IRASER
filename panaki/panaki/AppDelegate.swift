@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GameKit
 import AVFoundation
 import JSQMessagesViewController
 
@@ -16,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(application: UIApplication, willFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
         let panaki = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("panaki", ofType: "aiff")!)
         var sound: SystemSoundID = 0
         AudioServicesCreateSystemSoundID(panaki, &sound)
@@ -26,11 +28,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         NSThread.sleepForTimeInterval(1.0)
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-       // let viewController = Andrea_higa_score()
-       // Andrea_higa_score.login()
+        
         let mainviewController = ViewController()
         self.window!.rootViewController = mainviewController
         self.window!.makeKeyAndVisible()
+        
+        let s = Andrea_higa_score()
+        s.setTarget(mainviewController)
+        s.login()
         
         // Override point for customization after application launch.
         return true

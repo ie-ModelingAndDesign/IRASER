@@ -9,12 +9,6 @@
 import UIKit
 
 class DiscriptionView: UIViewController {
-
-    let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
-    
-    override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBar.hidden = true
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,19 +48,19 @@ class DiscriptionView: UIViewController {
         
         rule1.frame = CGRectMake(0, self.view.frame.size.height / 3, self.view.frame.size.width, 50)
         rule1.backgroundColor = UIColor.whiteColor()
-        rule1.text = "「ぱなき」とはようするにしりとりです"
+        rule1.text = "「ぱなき」とはしりとりである"
         rule1.textColor = UIColor.redColor()
         rule1.textAlignment = NSTextAlignment.Center
         
         rule2.frame = CGRectMake(self.view.frame.size.width / 2 - self.view.frame.size.width / 2, self.view.frame.size.height / 3 + 50, self.view.frame.size.width, 50)
         rule2.backgroundColor = UIColor.whiteColor()
-        rule2.text = "相手に「ぱなき」と言われたら終わりです"
+        rule2.text = "相手に「ぱなき」と言われたら負け"
         rule2.textColor = UIColor.orangeColor()
         rule2.textAlignment = NSTextAlignment.Center
 
         rule3.frame = CGRectMake(self.view.frame.size.width / 2 - self.view.frame.size.width / 2, self.view.frame.size.height / 3 + 100, self.view.frame.size.width, 50)
         rule3.backgroundColor = UIColor.whiteColor()
-        rule3.text = "しりとりの続いた回数がスコアです"
+        rule3.text = "しりとりの続いた回数がスコア"
         rule3.textColor = UIColor.blueColor()
         rule3.textAlignment = NSTextAlignment.Center
         

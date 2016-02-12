@@ -23,10 +23,12 @@ class ViewController: JSQMessagesViewController {
     var incomingAvatar: JSQMessagesAvatarImage!
     var outgoingAvatar: JSQMessagesAvatarImage!
     var beforeText : JSQMessage!
+    var alpha: CGFloat = 1.0
+    var style = UIStatusBarStyle.LightContent
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.setNeedsStatusBarAppearanceUpdate()
         
         let bg = NSBundle.mainBundle().pathForResource("bg", ofType: "png")
         let image_bg = UIImage(contentsOfFile: bg!)
@@ -35,7 +37,7 @@ class ViewController: JSQMessagesViewController {
         
         let bgview = UIImageView(frame:  CGRect(x: 0, y: 30, width: w, height: h))
         bgview.image = image_bg
-        self.collectionView?.backgroundColor = UIColor.clearColor()
+        self.collectionView?.backgroundColor = UIColor.blackColor()
         self.view.insertSubview(bgview, atIndex: 0)
         
         let lbtn = UIButton(type: .InfoLight)
@@ -61,12 +63,19 @@ class ViewController: JSQMessagesViewController {
         self.outgoingBubble = bubbleFactory.outgoingMessagesBubbleImageWithColor(UIColor.jsq_messageBubbleBlueColor())
         
         //アバターの設定
-        //self.incomingAvatar = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named: "hinako")!, diameter: 64)
-        //self.outgoingAvatar = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named: "keita")!, diameter: 64)
+        
+        let cpu = NSBundle.mainBundle().pathForResource("panaki", ofType: "png")
+        self.incomingAvatar = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(contentsOfFile: cpu!), diameter: 64)
+        let me = NSBundle.mainBundle().pathForResource("me", ofType: "png")
+        self.outgoingAvatar = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(contentsOfFile: me!), diameter: 64)
         
         //メッセージデータの配列を初期化
         self.messages = [JSQMessage(senderId: "user2", displayName: senderDisplayName, text: initMessage)]
-        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        self.inputToolbar?.contentView?.textView?.becomeFirstResponder() // focus
     }
     
     
@@ -82,18 +91,20 @@ class ViewController: JSQMessagesViewController {
         //新しいメッセージデータを追加する
         let playermesssage = JSQMessage(senderId: senderId, displayName: senderDisplayName, text: text)
     
-        if (text.characters.first == word.adjustChar((self.messages?.last?.text)!) && word.isExistword(text) && usedWordSearch(text) == false && word.isExistword(text)) {
+        if (text.characters.first == word.adjustChar((self.messages?.last?.text)!)
+            && word.isExistword(text)
+            && usedWordSearch(text) == false) {
             self.inputToolbar?.contentView?.textView?.placeHolder = ""
             self.messages?.append(playermesssage)
             self.finishReceivingMessageAnimated(true)
             self.receiveAutoMessage()
+
+            alpha -= (alpha > 0.01) ? 0.005 : 0
+            
+            self.collectionView?.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(alpha)
         } else {
             self.inputToolbar?.contentView?.textView?.placeHolder = "ちゃんとパナキしてよね！！"
         }
-            
-        
-        //メッセジの送信処理を完了する(画面上にメッセージが表示される)
-        
         
         //擬似的に自動でメッセージを受信
         self.finishSendingMessageAnimated(true)
@@ -146,21 +157,27 @@ class ViewController: JSQMessagesViewController {
         self.finishReceivingMessageAnimated(true)
         if (self.messages?.last?.text)! == "パナキ" {
             NSLog("パナキ")
-            presentScoreView((self.messages?.count)! / 2)
-        /*
-            let ac = UIAlertController(title: "ゲーム終了", message: "パナキされたので、あなたの負けです。\nもう一度？", preferredStyle: .ActionSheet)
-            let Continue = UIAlertAction(title: "続けろ！", style: .Default, handler: {
-                 (action:UIAlertAction!) -> Void in
-                
-                
+            let delay = 0.8 * Double(NSEC_PER_SEC)
+            let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+            dispatch_after(time, dispatch_get_main_queue(), {
+                self.presentScoreView((self.messages?.count)! / 2)
             })
-        */
+        } else if ((self.messages?.count)! / 2 % 20 == 0 && (self.messages?.count)! / 2 > 200) {
+            let delay = 0.8 * Double(NSEC_PER_SEC)
+            let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+            dispatch_after(time, dispatch_get_main_queue(), {
+                self.Do_you_admit_defeat()
+            })
         }
     }
     
-    func reset() {
-        self.messages?.removeAll()
-        self.messages = [JSQMessage(senderId: "user2", displayName: senderDisplayName, text: initMessage)]
+    func Do_you_admit_defeat() {
+        let alert = UIAlertController(title: "ここまでよく頑張りました!!", message:"長くなりそうですね。\n負けを認めますか?", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "はい", style: .Default) { _ in
+            self.presentScoreView((self.messages?.count)! / 2)
+        })
+        alert.addAction(UIAlertAction(title: "いいえ", style: .Default, handler: nil))
+        presentViewController(alert, animated: true, completion: nil)
     }
     
     func usedWordSearch(word: String) -> Bool {
@@ -180,6 +197,14 @@ class ViewController: JSQMessagesViewController {
         let dc = DiscriptionView()
         dc.modalPresentationStyle = .Popover
         presentViewController(dc, animated: true, completion: nil)
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return false;
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
     }
     
 }

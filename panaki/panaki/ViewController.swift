@@ -213,6 +213,7 @@ class ViewController: JSQMessagesViewController, AVAudioPlayerDelegate{
     func Do_you_admit_defeat() {
         let alert = UIAlertController(title: "ここまでよく頑張りました!!", message:"長くなりそうですね。\n負けを認めますか?", preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: "はい", style: .Default) { _ in
+            self.player.stop()
             self.presentScoreView((self.messages?.count)! / 2)
         })
         alert.addAction(UIAlertAction(title: "いいえ", style: .Default, handler: nil))

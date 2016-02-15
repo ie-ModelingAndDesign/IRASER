@@ -4,3 +4,4 @@ use_frameworks!
 
 pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 pod 'JSQMessagesViewController'
+pod 'Alamofire', '~> 3.0'

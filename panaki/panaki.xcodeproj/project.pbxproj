@@ -101,6 +101,7 @@
 		A10A371741D6F7F4BA9988FF /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90E32F840A7DAF4CA91003A9 /* Pods.framework */; };
 		A849ECFC1C6C14E4005F42A7 /* scoreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A849ECFB1C6C14E4005F42A7 /* scoreview.swift */; };
 		A889D3381C6C3D69007C60BD /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = A889D3371C6C3D69007C60BD /* bg.png */; };
+		A889D3431C71DD52007C60BD /* song.caf in Resources */ = {isa = PBXBuildFile; fileRef = A889D3421C71DD52007C60BD /* song.caf */; };
 		FE9E06341C04295A007C6AED /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE9E06331C04295A007C6AED /* Launch Screen.storyboard */; };
 		FE9E06361C0439BF007C6AED /* sprsh.png in Resources */ = {isa = PBXBuildFile; fileRef = FE9E06351C0439BF007C6AED /* sprsh.png */; };
 		FEE1F1A31BEB2F350096F7E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE1F1A21BEB2F350096F7E4 /* AppDelegate.swift */; };
@@ -217,6 +218,7 @@
 		90E32F840A7DAF4CA91003A9 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A849ECFB1C6C14E4005F42A7 /* scoreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = scoreview.swift; sourceTree = "<group>"; };
 		A889D3371C6C3D69007C60BD /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		A889D3421C71DD52007C60BD /* song.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = song.caf; sourceTree = "<group>"; };
 		F5150AE0067F7AD8597138DB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		FA1F8E38C5D8C9CE0CB78555 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FE9E06331C04295A007C6AED /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "../Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -403,6 +405,7 @@
 				FE9E06351C0439BF007C6AED /* sprsh.png */,
 				70114C6B1C060C02003EB634 /* panaki.aiff */,
 				FE9E06331C04295A007C6AED /* Launch Screen.storyboard */,
+				A889D3421C71DD52007C60BD /* song.caf */,
 				FEE1F1A21BEB2F350096F7E4 /* AppDelegate.swift */,
 				FEE1F1A41BEB2F350096F7E4 /* ViewController.swift */,
 				704AEB2F1BEB307000721ACD /* Andrea_higa_word.swift */,
@@ -604,6 +607,7 @@
 				70002FC51BF5AC9D0006101E /* 39.json in Resources */,
 				70002FCD1BF5AC9D0006101E /* 46.json in Resources */,
 				70002FD11BF5AC9D0006101E /* 5.json in Resources */,
+				A889D3431C71DD52007C60BD /* song.caf in Resources */,
 				70002FA71BF5AC9D0006101E /* 11.json in Resources */,
 				70002FC41BF5AC9D0006101E /* 38.json in Resources */,
 				70002FCE1BF5AC9D0006101E /* 47.json in Resources */,

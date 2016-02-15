@@ -10,7 +10,7 @@ import UIKit
 import JSQMessagesViewController
 import AVFoundation
 
-class ViewController: JSQMessagesViewController {
+class ViewController: JSQMessagesViewController, AVAudioPlayerDelegate{
     
     let lets = Andrea_higa()  // Main method
     let word = Andrea_higa_word() // Use for adjustChar method
@@ -18,6 +18,7 @@ class ViewController: JSQMessagesViewController {
     let navigationbar = UINavigationBar()
     var talker = AVSpeechSynthesizer()
     let initMessage = "りんご"
+    let player = try! AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("song", ofType: "caf")!))
 
     var messages: [JSQMessage]?
     var incomingBubble: JSQMessagesBubbleImage!
@@ -27,9 +28,18 @@ class ViewController: JSQMessagesViewController {
     var beforeText : JSQMessage!
     var alpha: CGFloat = 1.0
     var style = UIStatusBarStyle.LightContent
-    
+    var flag = true
+
     override func viewDidLoad() {
         super.viewDidLoad()
+            
+        player.delegate = self
+        
+        player.prepareToPlay()
+        
+        player.numberOfLoops = 9223372036854775807
+            
+
         self.setNeedsStatusBarAppearanceUpdate()
         
         let bg = NSBundle.mainBundle().pathForResource("bg", ofType: "png")
@@ -187,6 +197,11 @@ class ViewController: JSQMessagesViewController {
                 self.presentScoreView((self.messages?.count)! / 2)
             })
         } else if ((self.messages?.count)! / 2 % 20 == 0 && (self.messages?.count)! / 2 > 200) {
+            
+            if flag {
+                player.play()
+                flag = false
+            }
             let delay = 0.8 * Double(NSEC_PER_SEC)
             let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
             dispatch_after(time, dispatch_get_main_queue(), {

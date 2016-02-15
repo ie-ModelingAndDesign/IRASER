@@ -8,6 +8,7 @@
 
 import UIKit
 import JSQMessagesViewController
+import AVFoundation
 
 class ViewController: JSQMessagesViewController {
     
@@ -15,6 +16,7 @@ class ViewController: JSQMessagesViewController {
     let word = Andrea_higa_word() // Use for adjustChar method
     let mytextbox = UITextField()
     let navigationbar = UINavigationBar()
+    var talker = AVSpeechSynthesizer()
     let initMessage = "りんご"
 
     var messages: [JSQMessage]?
@@ -152,12 +154,34 @@ class ViewController: JSQMessagesViewController {
     }
     
     func didFinishMessageTimer(sender: NSTimer) {
-        let message = JSQMessage(senderId: "user2", displayName: "underscore", text: lets.siritori((self.messages?.last?.text)!))
-        self.messages?.append(message)
-        self.finishReceivingMessageAnimated(true)
+        
+        while(true){
+            let message = JSQMessage(senderId: "user2", displayName: "underscore", text: lets.siritori((self.messages?.last?.text)!))
+            if (usedWordSearch(message.text!) == false && message.text!.characters.last != "ぱ"){
+                self.messages?.append(message)
+                //テキスト読み上げ
+                if (message.text! != "パナキ"){
+                    let utterance = AVSpeechUtterance(string: (self.messages?.last?.text)!)
+                    utterance.rate = AVSpeechUtteranceDefaultSpeechRate  //読み上げ速度
+                    utterance.pitchMultiplier = 1.0  //声の高さ
+                    utterance.volume = 1.0   //ボリューム
+                    utterance.voice = AVSpeechSynthesisVoice(language: "ja-JP")  //言語設定
+                    self.talker.speakUtterance(utterance)   //読み上げ実行
+                }
+                self.finishReceivingMessageAnimated(true)
+                break
+            }
+        }
+        
         if (self.messages?.last?.text)! == "パナキ" {
             NSLog("パナキ")
             let delay = 0.8 * Double(NSEC_PER_SEC)
+            let panaki = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("panaki", ofType: "aiff")!)
+            //パナキです！ を再生
+            var sound: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(panaki, &sound)
+            AudioServicesPlaySystemSound(sound)
+            
             let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
             dispatch_after(time, dispatch_get_main_queue(), {
                 self.presentScoreView((self.messages?.count)! / 2)
